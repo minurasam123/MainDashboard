@@ -1,0 +1,338 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	font-size: 18px;
+	color: #444;
+}
+
+a {
+	text-decoration: none;
+	color: green;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+body {
+	margin-top: 30px;
+	
+	background: #ffffff;
+
+}
+.search {
+	margin: auto;
+	width: 1500px;
+}
+
+
+.top {
+	width: 1400px;
+	background: #006600;
+	margin-top: 10px;
+	padding:20px 30px ;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.top img {
+	float: left;
+	height: 60px;
+	margin: 20px 20px 20px 40px;
+	border-radius: 50%;
+	padding: 20px;
+}
+
+.top h1 {
+	font-size: 50px;
+	font-weight: bold;
+	color: white;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	margin-left: 40px;
+}
+.top h2,h3 {
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+
+
+.socialmedia {
+	margin-top: 0px;
+	margin-right: 20px;
+	float: right;
+}
+
+.socialmedia ul {
+	list-style: none;
+}
+
+.socialmedia ul li {
+	display: inline;
+}
+
+
+.socialmedia ul li a {
+	margin-left: 10px;
+	padding: 6px;
+	background: #444;
+	color: #fff;
+	display:inline-block;
+	border-radius: 20px;
+}
+
+.socialmedia ul li a:hover {
+	background: orange;
+}
+
+
+
+
+.top ul li:first-child button:hover {
+	cursor: pointer;
+	background-size: 25px;
+}
+
+
+.top ul li:last-child button {
+	border: none;
+	border-radius: 15px;
+	padding: 5px 20px;
+	background: #009900;
+	float: right;
+}
+
+.top ul li:last-child button:hover {
+	background: #ff9900;
+	cursor: pointer;
+}
+
+.nav-bar {
+	border-radius: 5px;
+	width: 1500px;
+	background :linear-gradient(#004d00,#009900,#00cc00);
+	float: right;
+}
+
+
+.nav-bar-links {
+	float: right; 
+}
+
+.nav-bar-links ul {
+	font-size: 20px;
+	margin: 15px;
+	list-style: none;
+}
+
+.nav-bar-links ul li{
+	margin-top: 10px;
+	padding:  0 10px;
+	display: inline-block;
+	border-right: 2px solid white;
+}
+
+.nav-bar-links ul li:last-child {
+	border: none;
+}
+
+.nav-bar-links ul li a {
+	color: white;
+}
+.nav-bar-links ul li a:hover{
+	color: orange;
+}
+
+header {
+	letter-spacing: 2px;
+	width: 1460px;
+	margin: auto;
+	height: 110px;
+	
+
+}
+
+header .logotext {
+	float: left; 
+	margin-top: 0px;
+	margin-left: 10px;
+
+}
+
+
+
+header .logotext h1{
+	font-size: 38px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-variant: small-caps;
+}
+
+
+div.logotext a {
+	text-transform: uppercase;
+	float: left;
+
+}
+
+div.logotext a:hover {
+	color:  orange;
+}
+
+
+nav {
+	
+	background: linear-gradient(#3333ff,#0000b3ff,#000066);
+	text-align: center;
+	border-radius: 5px;
+	border: 5px solid #004d00;
+
+}
+
+
+.page-content {
+	background: #BFD6BD;
+	margin: auto;
+	width: 1500px;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding: 70px 0px 50px 0px;
+	border-radius: 5px;
+}
+
+
+.blocks {
+	padding: 0px 0px 0 0px;
+	margin: 20px 20px;
+	margin-top: 20px;
+	width: 710px;
+	box-sizing: border-box;
+	font-size: 20px;
+	float: left;
+	text-align: center;
+}
+
+.forum label {
+	display: block;
+	font-weight: bold;
+}
+
+.forum input  {
+	font-size: 18px;
+	text-align: center;
+	padding: 5px 5px 5px 10px;
+	border-radius: 10px;
+	border: none;
+	margin-left: 60px;
+	margin-top: 10px;
+	width: 350px;
+	background: #DDF7DA;
+}
+
+
+
+.form-group {
+	margin-bottom: 30px;
+}
+
+.droping {
+	list-style: none;
+	font-size: 18px;
+	text-align: center;
+	padding: 5px 5px 5px 10px;
+	border-radius: 10px;
+	border: none;
+	margin-left: 60px;
+	margin-top: 10px;
+	width: 350px;
+	background: #DDF7DA;
+}
+
+.blocks button {
+	margin-top: 10px;
+	width: 400px;
+	margin: 10px 0 10px 85px;
+	padding: 10px 0;
+	border: none;
+	border-radius: 25px;
+	background: #88E087;
+	font-size: 20px;
+}
+
+.blocks button:hover {
+	background: #ff9900;
+	cursor: pointer;
+}
+
+.more-details {
+	width: 1500px;
+	margin: auto;
+	background: #E8FAE7;
+	margin-top: 10px;
+	border-radius: 5px;	
+}
+
+.more-blocks {
+	width: 450px;
+	margin-left: 10px;
+	box-sizing: border-box;
+	float: left;
+
+}
+
+.more-blocks ul {
+	list-style: none;
+	padding: 10px 20px 10px 20px;
+}
+
+.more-blocks ul li {
+	margin-bottom: 10px;
+	border-bottom: 1px solid grey;
+}
+
+.more-blocks ul li a::before {
+	content: "»  ";
+}
+
+.more-blocks ul li a {
+	color: green;
+}
+
+.more-blocks ul li a:hover {
+	color: orandetails
+}
+
+
+footer {
+	width: 1460px;
+	height: 30px;
+	margin: auto;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-top: 2px solid green;
+	padding: 5px 20px 0px 20px;
+	background: #006600;
+}
+
+footer .z1 {
+	float: left;
+}
+
+footer .z2 {
+	float: right;
+}
+
+
+
+
+
