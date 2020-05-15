@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Drop Lectures</title>
+  	<title>Create Lectures</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- style sheets -->
    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Edit%20Lectures/css/style.css">
     <link rel="stylesheet" href="css/exams.css">
   </head>
   <body>
@@ -44,13 +44,14 @@
 
 	<div class="page-content clearfix">
 		<div class="blocks">
-			<h1>Drop Lectures</h1>
+			<h1>Create Lecture</h1>
 
-			<form class="forum drop-forum">
+			<form class="forum">
+				
 
 				<div class="form-group">
 					<label>Level of the Lecture : </label>
-					<select id="dlecture-level">
+					<select id="alecture-level">
 						<option value ="none">None</option>
 						<option value ="Certificate Level">Certificate Level</option>
 						<option value ="Operational Level">Operational Level</option>
@@ -62,37 +63,12 @@
 
 				<div class="form-group">
 					<label>Subject of the Lecture : </label>
-					<select id="lecture-subject">
-						<option value ="none">None</option>
-						<option value ="BA1" class="lvl1">BA1</option>
-						<option value ="BA2" class="lvl1">BA2</option>
-						<option value ="BA3" class="lvl1">BA3</option>
-						<option value ="BA4" class="lvl1">BA4</option>
-						<option value ="E1" class="lvl2">E1</option>
-						<option value ="P1" class="lvl2">P1</option>
-						<option value ="F1" class="lvl2">F1</option>
-						<option value ="E2" class="lvl3">E2</option>
-						<option value ="P2" class="lvl3">P2</option>
-						<option value ="F2" class="lvl3">F2</option>
-						<option value ="E3" class="lvl4">E3</option>
-						<option value ="P3" class="lvl4">P3</option>
-						<option value ="F3" class="lvl4">F3</option>
-						<option value ="Other">Other</option>
-					</select>
-					<div class="msg"></div>
-					<button name="" id="drop-button">Click to select</button>
-				</div>
-
-				
-
-				<div class="form-group">
-					<label>You Selected to Drop Following Lectures : </label>
-					<ul class="droping">
-					</ul>					
+					<input type="text" name="lecture-subject" placeholder="Enter Lecture Subject Here">
 				</div>
 
 			</form>
-			<button name="">Drop</button>
+			<button name="add">Create</button>
+
 
 
 		</div><!-- blocks -->
@@ -102,11 +78,11 @@
 	
 
 	<footer class="clearfix">
-		<div class="z1">Copyrights &copy; PrabashManujaya</div>
+		<div class="z1">Copyrights &copy; CIMA</div>
 
 		<img src="img/nav-logo.png">
 
-		<div class="z2">Contact Us - prabashmanujaya@gmail.com</div>
+		<div class="z2">Contact Us - www.cima.lk</div>
 
 	</footer>
 
