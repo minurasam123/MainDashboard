@@ -1,5 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Admin Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- style sheets -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exams.css">
+  </head>
+  <body>
+		
+    <div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">			
+      <nav id="sidebar">
+	  		<h1><a href="index.html" class="logo">E-Learning Dashboard</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li>
+              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin Dashboard</a>
+          </li>
+          <li>
+            <a href="exams.html"><span class="fa fa-leanpub mr-3"></span> Exams </a>
+          </li>
+          <li>
+            <a href="results.html"><span class="fa fa-list-alt mr-3"></span> Results </a>
+          </li>
+          <li>
+            <a href="stdprofile.html"><span class="fa fa-graduation-cap mr-3"></span> Students </a>
+          </li>
+          <li>
+            <a href="main/general.html"><span class="fa fa-sign-out mr-3"></span> logout </a>
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+       <div id="content" class="p-4 p-md-5 pt-5">
+        <div class="flexbox-container">
+          <div class="row-1">
+
+    
+
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -22,7 +65,7 @@ body, html {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 25%;
+  width: 20%;
 }
 
 .tablink:hover {
@@ -40,6 +83,8 @@ body, html {
 #Level_2 {background-color: white;}
 #Level_3 {background-color: white;}
 #Level_4 {background-color: white;}
+#Level_5 {background-color: white;} 
+
 </style>
 </head>
 <body>
@@ -48,17 +93,26 @@ body, html {
 <button class="tablink" onclick="openPage('Level_2', this, 'Green')">Operatonal Level</button>
 <button class="tablink" onclick="openPage('Level_3', this, 'Green')">Management Level</button>
 <button class="tablink" onclick="openPage('Level_4', this, 'Green')">Strategic Level</button>
+<button class="tablink" onclick="openPage('Level_5', this, 'Green')">Case Studies</button>
 
 <div id="Level_1" class="tabcontent">
-
+Subject <select>
+ <option> BA 1 </option>
+ <option> BA 2 </option>
+ <option> BA 3 </option>
+ <option> BA 4 </option>
+</select>
+<br>
+<br>
+<br>
 <table  cellspacing=10 cellpadding=5 id="data_table1" width=100% height=100%>
 <tr>
-<th align="left">Reg_No</th>
+<th align="left">CIMA ID</th>
 <th align="left">Name</th>
 </tr>
 
 <tr id="row11">
-<td id="regno1_row1">S/14/117</td>
+<td id="regno1_row1">C/14/117</td>
 <td id="name1_row1">T.N.D. Ranasingha</td>
 <td>
 <input type="button" id="edit1_button1" value="Edit" class="edit" onclick="edit1_row('1')">
@@ -68,7 +122,7 @@ body, html {
 </tr>
 
 <tr id="row12">
-<td id="regno1_row2">S/14/345</td>
+<td id="regno1_row2">C/14/345</td>
 <td id="name1_row2">Y.D.K. Methmal</td>
 <td>
 <input type="button" id="edit1_button2" value="Edit" class="edit" onclick="edit1_row('2')">
@@ -78,7 +132,7 @@ body, html {
 </tr>
 
 <tr id="row13">
-<td id="regno1_row3">S/14/234</td>
+<td id="regno1_row3">C/14/234</td>
 <td id="name1_row3">D.G. Kamal</td>
 <td>
 <input type="button" id="edit1_button3" value="Edit" class="edit" onclick="edit1_row('3')">
@@ -151,14 +205,22 @@ function add1_row()
 
 <div id="Level_2" class="tabcontent">
 
+Subject <select name="a">
+ <option> E1 </option>
+ <option> P1 </option>
+ <option> F1 </option></select>
+<br>
+<br>
+<br>
+
 <table  cellspacing=10 cellpadding=5 id="data_table2" width=100% height=100%>
 <tr>
-<th align="left">Reg_No</th>
+<th align="left">CIMA ID</th>
 <th align="left">Name</th>
 </tr>
 
 <tr id="row21">
-<td id="regno2_row1">S/15/017</td>
+<td id="regno2_row1">C/15/017</td>
 <td id="name2_row1">H.D. Kasun</td>
 <td>
 <input type="button" id="edit2_button1" value="Edit" class="edit" onclick="edit2_row('1')">
@@ -168,7 +230,7 @@ function add1_row()
 </tr>
 
 <tr id="row22">
-<td id="regno2_row2">S/15/145</td>
+<td id="regno2_row2">C/15/145</td>
 <td id="name2_row2">U.V. Rathnayake</td>
 <td>
 <input type="button" id="edit2_button2" value="Edit" class="edit" onclick="edit2_row('2')">
@@ -178,7 +240,7 @@ function add1_row()
 </tr>
 
 <tr id="row23">
-<td id="regno2_row3">S/15/404</td>
+<td id="regno2_row3">C/15/404</td>
 <td id="name2_row3">S.J. Madumal</td>
 <td>
 <input type="button" id="edit2_button3" value="Edit" class="edit" onclick="edit2_row('3')">
@@ -248,18 +310,26 @@ function add2_row()
 </script>  
 </div>
 
-
+ <div class="row-2">
 
 <div id="Level_3" class="tabcontent">
 
+Subject <select name="a">
+ <option> E2 </option>
+ <option> P2 </option>
+ <option> F2 </option></select>
+<br>
+<br>
+<br>
+
 <table  cellspacing=10 cellpadding=5 id="data_table3" width=100% height=100%>
 <tr>
-<th align="left">Reg_No</th>
+<th align="left">CIMA ID</th>
 <th align="left">Name</th>
 </tr>
 
 <tr id="row31">
-<td id="regno3_row1">S/16/317</td>
+<td id="regno3_row1">C/16/317</td>
 <td id="name3_row1">H. Wickremasingha</td>
 <td>
 <input type="button" id="edit3_button1" value="Edit" class="edit" onclick="edit3_row('1')">
@@ -269,7 +339,7 @@ function add2_row()
 </tr>
 
 <tr id="row32">
-<td id="regno3_row2">S/16/503</td>
+<td id="regno3_row2">C/16/503</td>
 <td id="name3_row2">D.S. Gunawardana</td>
 <td>
 <input type="button" id="edit3_button2" value="Edit" class="edit" onclick="edit3_row('2')">
@@ -279,7 +349,7 @@ function add2_row()
 </tr>
 
 <tr id="row33">
-<td id="regno3_row3">S/16/084</td>
+<td id="regno3_row3">C/16/084</td>
 <td id="name3_row3">K.N. Gamage</td>
 <td>
 <input type="button" id="edit3_button3" value="Edit" class="edit" onclick="edit3_row('3')">
@@ -350,17 +420,25 @@ function add3_row()
 
 
 </div>
-
+ <div class="row-2">
 <div id="Level_4" class="tabcontent">
+
+Subject <select name="a">
+ <option> E3</option>
+ <option> P3 </option>
+ <option> F3 </option></select>
+<br>
+<br>
+<br>
 
 <table  cellspacing=10 cellpadding=5 id="data_table4" width=100% height=100%>
 <tr>
-<th align="left">Reg_No</th>
+<th align="left">CIMA ID</th>
 <th align="left">Name</th>
 </tr>
 
 <tr id="row41">
-<td id="regno4_row1">S/17/122</td>
+<td id="regno4_row1">C/17/122</td>
 <td id="name4_row1">M.H. Rajapaksha</td>
 <td>
 <input type="button" id="edit4_button1" value="Edit" class="edit" onclick="edit4_row('1')">
@@ -370,7 +448,7 @@ function add3_row()
 </tr>
 
 <tr id="row42">
-<td id="regno4_row2">S/17/375</td>
+<td id="regno4_row2">C/17/375</td>
 <td id="name4_row2">P.K. Gunarathne</td>
 <td>
 <input type="button" id="edit4_button2" value="Edit" class="edit" onclick="edit4_row('2')">
@@ -380,7 +458,7 @@ function add3_row()
 </tr>
 
 <tr id="row43">
-<td id="regno4_row3">S/17/470</td>
+<td id="regno4_row3">C/17/470</td>
 <td id="name4_row3">H.V. Kumari</td>
 <td>
 <input type="button" id="edit4_button3" value="Edit" class="edit" onclick="edit4_row('3')">
@@ -451,6 +529,115 @@ function add4_row()
   
 </div>
 
+
+<div id="Level_5" class="tabcontent">
+Subject<select name="a" onChange="window.location.href=this.value">
+ <option> Subject 1 </option>
+ <option value="table"> Subject 2</option>
+ <option> Subject 3 </option></select>
+<br>
+<br>
+<br>
+<table  cellspacing=10 cellpadding=5 id="data_table5" width=100% height=50%>
+<tr>
+<th align="left">CIMA ID</th>
+<th align="left">Name</th>
+</tr>
+
+<tr id="row51">
+<td id="regno5_row1">C/18/017</td>
+<td id="name5_row1">N.H. Jayakody</td>
+<td>
+<input type="button" id="edit5_button1" value="Edit" class="edit" onclick="edit5_row('1')">
+<input type="button" id="save5_button1" value="Save" class="save" onclick="save5_row('1')">
+<input type="button" value="Delete" class="delete" onclick="delete1_row('51')">
+</td>
+</tr>
+
+<tr id="row52">
+<td id="regno5_row2">C/18/576</td>
+<td id="name5_row2">A.B. Hansani</td>
+<td>
+<input type="button" id="edit5_button2" value="Edit" class="edit" onclick="edit5_row('2')">
+<input type="button" id="save5_button2" value="Save" class="save" onclick="save5_row('2')">
+<input type="button" value="Delete" class="delete" onclick="delete5_row('52')">
+</td>
+</tr>
+
+<tr id="row53">
+<td id="regno5_row3">C/18/246</td>
+<td id="name5_row3">D.K. Dhesh</td>
+<td>
+<input type="button" id="edit5_button3" value="Edit" class="edit" onclick="edit5_row('3')">
+<input type="button" id="save5_button3" value="Save" class="save" onclick="save5_row('3')">
+<input type="button" value="Delete" class="delete" onclick="delete5_row('53')">
+</td>
+</tr>
+
+<tr>
+<td><input type="text" id="new_regno5"></td>
+<td><input type="text" id="new_name5"></td>
+<td><input type="button" class="add" onclick="add5_row();" value="Add Row"></td>
+</tr>
+
+
+</div>
+
+
+
+<script>
+
+
+function edit5_row(no)
+{
+ document.getElementById("edit5_button"+no).style.display="none";
+ document.getElementById("save5_button"+no).style.display="block";
+	
+ var regno5=document.getElementById("regno5_row"+no);
+ var name5=document.getElementById("name5_row"+no);
+	
+ var regno5_data=regno5.innerHTML;
+ var name5_data=name5.innerHTML;
+	
+ regno5.innerHTML="<input type='text' id='regno5_text"+no+"' value='"+regno5_data+"'>";
+ name5.innerHTML="<input type='text' id='name5_text"+no+"' value='"+name5_data+"'>";
+}
+
+function save5_row(no)
+{
+ var regno5_val=document.getElementById("regno5_text"+no).value;
+ var name5_val=document.getElementById("name5_text"+no).value;
+
+ document.getElementById("regno5_row"+no).innerHTML=regno5_val;
+ document.getElementById("name5_row"+no).innerHTML=name5_val;
+
+ document.getElementById("edit5_button"+no).style.display="block";
+ document.getElementById("save5_button"+no).style.display="none";
+}
+
+function delete5_row(no)
+{
+ document.getElementById("row"+no+"").outerHTML="";
+}
+
+function add5_row()
+{
+ var new_regno5=document.getElementById("new_regno5").value;
+ var new_name5=document.getElementById("new_name5").value;
+	
+ var table5=document.getElementById("data_table5");
+ var table5_len=(table5.rows.length)-1;
+ var row5 = table5.insertRow(table5_len).outerHTML="<tr id='row5"+table5_len+"'><td id='regno5_row"+table5_len+"'>"+new_regno5+"</td><td id='name5_row"+table5_len+"'>"+new_name5+"</td><td><input type='button' id='edit5_button"+table5_len+"' value='Edit' class='edit' onclick='edit5_row("+table5_len+")'> <input type='button' id='save5_button"+table5_len+"' value='Save' class='save' onclick='save5_row("+table5_len+")'> <input type='button' value='Delete' class='delete' onclick='delete5_row("+table5_len+")'></td></tr>";
+
+ document.getElementById("new_regno5").value="";
+ document.getElementById("new_name5").value="";
+}
+</script>
+
+</div>
+
+
+
 <script>
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
@@ -470,5 +657,9 @@ function openPage(pageName,elmnt,color) {
 document.getElementById("defaultOpen").click();
 </script>
    
+</div>
+</div> 
+
 </body>
-</html> 
+</html>
+
