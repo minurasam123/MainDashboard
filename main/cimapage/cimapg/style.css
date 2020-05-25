@@ -121,7 +121,7 @@ position: sticky;
  display: flex;
   justify-content: center;
   align-items: center;
-    background-image: url(business%20image%20hand.jpg);
+    background-image: url(images/business%20image%20hand.jpg);
     background-size: cover;
 }
 
@@ -177,7 +177,7 @@ position: sticky;
  display: flex;
   justify-content: center;
   align-items: center;
-    background-image: url(stat.jpg);
+    background-image: url(images/stat.jpg);
     background-size: cover;
     color:ghostwhite;
 }
@@ -228,7 +228,7 @@ position: sticky;
  display: flex;
   justify-content:space-around;
   align-items:flex-end;
-    background-image: url(brains.jpg);
+    background-image: url(images/brains.jpg);
     background-size: cover;
     color: white;
 }
@@ -273,7 +273,7 @@ padding top: 20px;
  display: flex;
   justify-content:flex-start;
   align-items:flex-end;
-    background-image: url(business-strategic-planning.jpg);
+    background-image: url(images/business-strategic-planning.jpg);
     background-size: cover;
    color:skyblue;
 }
