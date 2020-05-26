@@ -2,6 +2,11 @@
 a {text-decoration: none;}
 .clearfix { overflow: auto; }
 
+h2{
+	color: green;
+	padding-left: 310px;
+}
+
 .course {
 	position: relative;
 	width: 1000px;
@@ -11,7 +16,7 @@ a {text-decoration: none;}
 
 .course .box {
 	position: relative;
-	width: calc(300px - 30px);
+	width: calc(210px - 30px);
 	height: calc(300px - 30px);
 	background: darkslategray;
 	float: left;
@@ -61,7 +66,7 @@ a {text-decoration: none;}
 }
 
 .course .box .links ul li a{
-	color: red;
+	color: #80FC38;
 	font-size: 14px;
 }
 
