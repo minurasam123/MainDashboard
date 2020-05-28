@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/Create-Exam.css">
+    <title>E-learning Dashboard</title>
+</head>
+<body>
+	<div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">			
+		<nav id="sidebar">
+				<h1><a href="index.html" class="logo">E-Learning Dashboard</a></h1>
+		  <ul class="list-unstyled components mb-5">
+			<li>
+				<a href="admin.html"><span class="fa fa-user mr-3"></span> Admin Dashboard</a>
+			</li>
+			<li>
+			  <a href="exams.html"><span class="fa fa-leanpub mr-3"></span> Exams </a>
+			</li>
+			<li>
+			  <a href="results.html"><span class="fa fa-list-alt mr-3"></span> Results </a>
+			</li>
+			<li>
+			  <a href="stdprofile.html"><span class="fa fa-graduation-cap mr-3"></span> Students </a>
+			</li>
+			<li>
+			  <a href="main/general.html"><span class="fa fa-sign-out mr-3"></span> logout </a>
+			</li>
+		  </ul>
+  
+		  </nav>
+  
+		  <!-- Page Content  -->
+		<div id="content" class="p-4 p-md-5 pt-5">
+			<div class="main_content">
+				<div class="flexbox-container">
+					<h1>Create Exam</h1> 
+					<div class="column-1">
+					<div class="info">
+						 <label>Select Level :</label>
+						 
+							 <select name="levels">
+									<option value ="level-01">Certificate Level</option>
+									<option value ="level-02">Operational Level</option>
+									<option value ="level-03">Management Level</option>
+									<option value ="level-04">Strategic Level</option>
+									
+				
+							</select>
+				
+				<br>				
+				<div class="form-group">
+						<label> Select Subject : </label>	
+						<br>
+						<ul class="level">
+								<label> Certificate level :</label>
+								<select name="subject modules">
+								
+									  <option value ="module-01">BA1</option>
+									  <option value ="module-02">BA2</option>
+									  <option value ="module-03">BA3</option>
+									  <option value ="module-04">BA4</option>
+									  <option value ="module-05">None</option>
+								</ul>
+								</select>
+							</div>	
+						
+					<div class="form-group">
+								
+								<ul class="level">
+								<label> Operational level :</label>
+								<select name="subject modules">
+								
+									  <option value ="module-01">E1</option>
+									  <option value ="module-02">P1</option>
+									  <option value ="module-03">F1</option>
+									  <option value ="module-04">CS</option>
+									  <option value ="module-05">None</option>
+								</ul>
+								</select>
+							</div>	
+							
+				<div class="form-group">
+								
+								<ul class="level">
+								<label> Management level :</label>
+								<select name="subject modules">
+								
+									  <option value ="module-01">E2</option>
+									  <option value ="module-02">P2</option>
+									  <option value ="module-03">F2</option>
+									  <option value ="module-04">CS</option>
+									  <option value ="module-05">None</option>
+								</ul>
+								</select>
+							</div>	
+						</div>
+				</div>	
+			<div class="column-2">
+				<div class="form-group">
+							
+					<ul class="level">
+					<label> Strategic level :</label>
+					<select name="subject modules">
+					
+						  <option value ="module-01">E3</option>
+						  <option value ="module-02">P3</option>
+						  <option value ="module-03">F3</option>
+						  <option value ="module-04">CS</option>
+						  <option value ="module-05">None</option>
+					</ul>
+					</select>
+				</div>
+				<br>
+				<div class="form-group">
+								<label> Subject module : </label>
+								<td>
+								<input type="text" name="">
+								</td>
+				</div>
+
+				<br>
+				<div class="form-group">
+						<label>Exam Type :</label>
+						
+							<select name="Types">
+									<option value ="type-01">Case Study</option>
+									<option value ="type-02">MCQ</option>
+										
+								</select> 	
+				</div>
+				
+				<br>
+				<div class="form-group">
+						<label>Upload CSV :</label>   
+							
+					<button name="upload">Upload</button>
+				</div>
+
+						</div>
+			</div>
+		</div>
+		</div>	
+	
+	</div>
+		 
+	
+</body>
+</html>
