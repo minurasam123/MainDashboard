@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+background-color:yellow;
+border-bottom:1px solid black;
+
+}
+h1{
+background-color:pink;
+border-bottom:1px solid black;
+
+}
+
+
+.sidebar{
+    height: 100%; 
+    width: 25%; 
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: aliceblue;
+    float: left;
+} 
+.sidebar a{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+}
+
+.sidebar h2{
+    background-color: green;
+    color:yellow;
+    font-size:20px;
+    height: 5rem;
+}
+
+.main-content{
+    height: 100%; 
+    width: 75%; 
+    top: 0;
+    background-color: aliceblue; 
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding: 20px;
+    float: right;
+} 
+
+.main-content create-exam{
+    
+    padding: 20px;
+
+}
+
+.main-content h1{
+    color: #111;
+}
+
+
+.upload-btn{
+    color: green;
+}
+
+label{
+    color: blue;
+    padding: 20px;
+}
+
+.option{
+    color: black;
+}
+
+.modules{
+    background-color:rebeccapurple;
+}
+
+
+.flexbox-container-1{
+    padding-left: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
