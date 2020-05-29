@@ -25,50 +25,6 @@ body{
    
 }
 
-#sidebar{
-    position: fixed;
-    min-width: 250px;
-    max-width: 250px;
-    height: 100%;
-    background: #212121;
-    background-color: rgb(33, 33, 33);
-    color: #17a2b8;
-    transition: all 0.3s;
-   
-}
-
-#sidebar h1 {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 20px;
-    text-align: left;
-}
-#sidebar h1 .logo {
-    color: #fff;
-    display: block;
-    padding: 10px 30px;
-    background: darkgreen;
-}
-#sidebar ul li {
-    font-size: 16px;
-}
-#sidebar ul li a {
-    padding: 15px 30px;
-    display: block;
-    color: rgba(255, 255, 255, 0.6);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-  
-#sidebar ul li a .fas{
-    width: 25px;
-}
-#sidebar ul li:hover{
-    background: #5442b1;
-}
-#sidebar ul li :hover a{
-   color: #fff;
-}
-
 .wrapper .content{
     width: 100%;
     margin-left: 250px;
