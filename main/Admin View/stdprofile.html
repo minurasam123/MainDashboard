@@ -37,9 +37,10 @@
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
+<div id="stdprofile" style="display: all;">
         <div class="create-container">
           <div class="create-exam">
-            <button><span class="fa fa-plus"><a href="student-creation.html">Create Student</a></span></button>
+            <button value="Create Student" onclick="btnCreate();"><span class="fa fa-plus">  Create Student</span></button>
           </div>
         </div>
         <h1>Student List</h1>
@@ -61,9 +62,75 @@
         <tbody>
         </tbody>
       </table>
+    </div>
+</div><!-- stdprofile -->
+
+
+
+    <!-- student creation part -->
+
+<div id="student-creation-form" style="display: none; opacity: ;">
+    <h3 style="font-weight: bold; padding-bottom: 50px; margin-left: 200px;margin-right: auto;" >Create New Profile</h3>
+            <form action="" method="">
+             
+            <div class="form-row" style="padding-bottom: 20px;">
+                <div class="form-group col-md-4">
+                  <label style="color: black; font-weight: bold;">First name</label>
+                  <input type="text" class="form-control" id="inputfname" name="fname" placeholder="Firstname" >
+                </div>
+                  <div class="form-group col-md-4">
+                    <label style="color: black; font-weight: bold;">Last name</label>
+                    <input type="text" class="form-control" id="inputlname" placeholder="Lastname">
+                  </div>
+                </div>
+            <div class="form-row" style="padding-bottom: 20px;">
+                <div class="form-group col-md-4">
+                  <label style="color: black; font-weight: bold;">CIMA ID</label>
+                  <input type="text" class="form-control" id="inputID" placeholder="ID">
+                </div>
+                  <div class="form-group col-md-4">
+                    <label style="color: black; font-weight: bold;">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+                  </div>
+                </div>
+            <div class="form-row" style="padding-bottom: 20px;">
+                <div class="form-group col-md-4">
+                 <label style="color: black; font-weight: bold;">Level</label>
+                    <select class="form-control" id="level">
+                      <option value="none">Select Level</option>
+                      <option value ="Certificate Level">Certificate Level</option>
+                      <option value ="Operational Level">Operational Level</option>
+                      <option value ="Management Level">Management Level</option>
+                      <option value ="Strategic Level">Strategic Level</option>
+                    </select>
+                </div>
+                  <div class="form-group col-md-4">
+                    <label style="color: black; font-weight: bold;">Membership</label>
+                       <select class="form-control" id="membsh">
+                         <option value="none">Select</option>
+                         <option>Part Time</option>
+                         <option>Full Time</option>
+                       </select>
+                  </div>
+            </div>
+            <div class="form-row" style="padding-bottom: 20px;">
+                <div class="form-group col-md-4">
+                  <label style="color: black; font-weight: bold;">Username</label>
+                  <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                </div>
+                <div class="form-group col-md-4">
+                  <label style="color: black; font-weight: bold;">Password</label>
+                  <input type="password" class="form-control" id="inputPW" placeholder="Password">
+                </div>
+            </div>
+              <div id="msg" style="color: red; opacity: 0; font-weight: bold;">Please fill above fields</div>
+              <input type="button" value="Add Student" class="btn btn-primary text-center border rounded d-xl-flex" style="margin-left: 300px;margin-right: auto;margin-top: 5px;" onclick="newStudent(); ">
+            </form>
+            
+           
+</div><!-- student-creation-form -->
       </div>
     </div>
-
-    <script src="js/script.js"></script>
+   <script type="text/javascript" src="js/stdprofile_a.js"></script>
   </body>
 </html>
