@@ -92,3 +92,17 @@ label{
     flex-direction: column-reverse;
     flex-wrap: wrap;
   }
+ .column-3{
+	  position:relative;
+	  
+  }
+  
+  .column-3{
+	  top:200px;
+	  right:200px;
+	  position:absolute;
+	  
+  } 
+  
+
+  
