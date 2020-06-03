@@ -1,25 +1,48 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Login Form Design </title>
-<link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="assets/css/Login page.css">
+	
 </head>
-    <body>
-    <div class="login_box">
-    <img src="assets/img/avatar.png" class="avatar">
-        <h1>Login Here</h1>
-        <form>
-          <div class="form-group col-md-6">
-              <p>Username</p>
-                <input type="text" name="username" placeholder="Enter Username">
-              </div>
-              <div class="form-group col-md-6">
-                <p>Password</p>
-              <input type="password" name="password" placeholder="Enter Password">
-            </div>
-              <button class="btn-get-started scrollto" type="button" onclick="document.location = 'Student View/student_dashboard.html'">Login</button>
-              <tr>Forgot Password?</tr>  
-            </form>
-         </div>
-        
-    </body>    
+<body>
+
+<div class="loginbox">
+	<img src="assets/img/avatar.png" class="user">
+	<h1> User Login</h1>
+
+	<form id="form1">
+		<p>Username</p>
+		<input type="text" name="" placeholder="Enter Username Here" id="username-input">
+		<p>Password</p>
+		<input type="password" name="" placeholder="Enter Password Here"  id="password-input">
+
+		<div id="msg" >Fill above fields</div>
+		<input type="submit" id="loginBtn" value="Login" onclick="">
+		<p>
+		<a href="">Lost Your Password</a> <br>
+		<a href="">Don't Have an Account? <u>Login Here</u></a></p>
+	</form>
+</div>
+
+
+<script type="text/javascript">
+	const loginBtn = document.getElementById("loginBtn");
+	const usernameInput = document.getElementById("username-input");
+	const passwordInput = document.getElementById("password-input");
+	const msg = document.getElementById("msg");
+	loginBtn.addEventListener('click',btn);
+	
+	function btn(e) {
+		e.preventDefault();
+		if (usernameInput.value.length == 0 || passwordInput.value.length == 0){
+			msg.style.opacity="1";
+        	setTimeout(() => msg.style.opacity="0",2000);
+		}
+	}
+</script>
+</body>
 </html>
