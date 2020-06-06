@@ -8416,7 +8416,7 @@ footer .z2 {
 
 #drop-button {
 	width: 200px;
-	margin: 20px 0 10px 185px;
+	margin: 5px 0 25px 185px;
 	padding: 5px 0;
 	border: none;
 	border-radius: 25px;
@@ -8431,5 +8431,38 @@ footer .z2 {
 
 .blocks button:hover {
 	background: #3FFC00;
+	cursor: pointer;
+}
+
+
+.lbl
+{
+    color: chocolate;
+    margin-left: 35px;
+    
+}
+
+.checkb
+{
+    margin-right: 10px;
+}
+
+#drop_subs {
+    margin-bottom: 30px;
+}
+
+#drop-button-select
+{
+    width: 200px;
+	margin: 5px 0 25px 185px;
+	padding: 5px 0;
+	border: none;
+	border-radius: 25px;
+	background: #DDF7DA;
+	font-size: 18px;   
+}
+
+#drop-button-select:hover {
+	background: #88E087;
 	cursor: pointer;
 }
