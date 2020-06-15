@@ -9,13 +9,15 @@ background-color:yellow;
 border-bottom:1px solid black;
 
 }
-h1{
-background-color:pink;
-border-bottom:1px solid black;
+
+h1 {
+    text-align: center;
+    background-color: #B7FFB5;
+    border-bottom:1px solid black;
 
 }
 
-
+/*
 .sidebar{
     height: 100%; 
     width: 25%; 
@@ -72,7 +74,7 @@ border-bottom:1px solid black;
 }
 
 label{
-    color: blue;
+    color: black;
     padding: 20px;
 }
 
@@ -97,12 +99,77 @@ label{
 	  
   }
   
-  .column-3{
+.column-3{
 	  top:200px;
 	  right:200px;
 	  position:absolute;
 	  
-  } 
-  
+}
+  */
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+/*****PM*****/
+
+table {
+    margin: 100px 0 0 40px;
+    font-color: black;
+    color: black;
+}
+
+table tr {
+ }
+
+table tr td {
+    width: 180px;
+
+}
+
+label {
+    margin: 10px;
+    margin-bottom: 50px;
+
+}
+
+select, #upload {
+    margin: 10px;
+    margin-bottom: 50px;
+    padding: 3px;
+    width: 200px;
+    text-align: center;
+    border-radius: 7px;
+    border: 1px solid grey;
+
+}
+
+#create {
+    margin: 0 0 0 40%;
+    width: 20%;
+    padding: 5px 0;
+    border-radius: 7px;
+    border: 1px solid grey;
+    font-size: 16px;
+    background: linear-gradient(#FCFCFC,#F2F2F2,#DBDBDB);
+}
+
+#create:hover {
+    color: #404040;
+    cursor: pointer;
+    background: linear-gradient(#40E8A9,#35C28D);
+}
+
+
+.none{
+    display: none;
+}

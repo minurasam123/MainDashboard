@@ -14,7 +14,6 @@
     z-index: auto;
 }
 
-} 
 
 .header {
     overflow: hidden;
@@ -267,4 +266,36 @@ a .a1{
   .table, .row, .cell {
     width: 100% !important;
   }
+}
+
+
+
+
+/*PM*/
+
+#tableExams {
+  margin: auto;
+  margin-top: 70px;
+  width: 80%;
+  font-size: 14px;
+  color: black;
+}
+
+#tableExams thead tr th {
+  border-bottom: 1px solid #B1CFB3;
+  padding: 10px 10px 5px 3px;
+}
+
+#deleteButton {
+  padding: 1px 2px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-size: 14px;
+  background: linear-gradient(#FCFCFC,#F2F2F2,#DBDBDB);
+}
+
+#deleteButton:hover {
+    color: #404040;
+    cursor: pointer;
+    background: linear-gradient(#40E8A9,#35C28D);
 }
