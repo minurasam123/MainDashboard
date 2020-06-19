@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Edit%20Lectures/css/style.css">
     <link rel="stylesheet" href="css/exams.css">
+    <link rel="stylesheet" href="Edit%20Lectures/css/Grid.css">
   </head>
   <body>
 		
@@ -49,12 +50,16 @@
 
 	<div class="page-content clearfix">
 		<div class="blocks">
-			<h1>Drop Lectures</h1>
+			<h1>Drop Lectures</h1>  
 
 			<form class="forum drop-forum">
 
-				<div class="form-group">
-					<label>Level of the Lecture : </label>
+            <div class="row">  
+                
+                <div class="col span-1-of-3">
+                        <div class="form-group">
+                    
+					<label>Level</label>
 					<select id="alecture-level" onchange="dp_select()">
 						<option value ="none">None</option>
 						<option value ="Certificate Level">Certificate Level</option>
@@ -62,10 +67,12 @@
 						<option value ="Management Level">Management Level</option>
 						<option value ="Strategic Level">Strategic Level</option>
 					</select>
-				</div>
+                        </div>
+                </div>
                 
-                <div class="form-group">
-					<label>Subject of the Lecture : </label>
+                 <div class="col span-1-of-3">
+                     <div class="form-group">
+					<label>Subject</label>
 					<select id="subs">
                             <option id="op1" value ="none">None</option>
                             <option id="op2" value ="BA1" class="lvl1">BA1</option>
@@ -82,18 +89,22 @@
                             <option id="op13" value ="P3" class="lvl4">P3</option>
                             <option id="op14" value ="F3" class="lvl4">F3</option>
                     </select>
-				</div>
+                     </div>
+                 </div>
 
-				<div class="form-group">
-                <label>Module</label>
+                 <div class="col span-1-of-3"> 
+                    <div class="form-group">
+                    <label>Module</label>
                     <select id="lecture-module">
 						<option value ="none">None</option>
 						<option id="mo1" value ="M1" class="lvl1">M1</option>
 						<option id="mo2" value ="M2" class="lvl1">M2</option>
 						<option id="mo3" value ="M3" class="lvl1">M3</option>
                     </select>
+                    </div>
                 </div>
-
+            </div>    
+                    
                     <button type="button" name="" id="drop-button" onclick="subs_select();">Display</button>
                 
 
@@ -105,7 +116,7 @@
                     
                     
 			</form>
-			<button type="button" onclick="drop();">Drop</button>
+			<button type="button" onclick="drop();" id="dbutton">Drop</button>
 
 
 		</div><!-- blocks -->
