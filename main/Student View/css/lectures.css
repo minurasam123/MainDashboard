@@ -37,6 +37,7 @@ h2{
 	transition: 0.5s;
 }
 
+
 .course .box:hover .smallbox {
 	top: 15px;
 	right: calc(80% - 40px);
