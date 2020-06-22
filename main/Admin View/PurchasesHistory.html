@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="css/PurchasesHistory.css">
    <link rel="stylesheet" href="css/style.css">
+   <script src="js/purchasesHistory.js"></script>
 </head>
 <body></body>
 
@@ -37,7 +39,7 @@
         <div id="content" class="p-4 p-md-5 pt-5">
           <h1 style="padding-left: 10px;">Customer Purchases</h1>
 
-      <table class="table">
+      <table class="table"  id="table">
     
        <thead>
            <tr>
@@ -81,7 +83,17 @@
        </tbody>
        
        
-   </table>
+      </table>
+
+
+  
+  <div class="download">
+
+    <h5>Download the Customer purchases History</h5>
+ 
+    <label >Select the file type:</label>
+   <button onclick="exportToExcel('table', 'purchasesHistory')">.XLS</button>
+    <button onclick="exportToDOC('table', 'purchasesHistory')" >.DOC</button>
   </div>
   </div>
 </body>

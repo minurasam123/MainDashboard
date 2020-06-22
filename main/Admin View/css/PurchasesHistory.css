@@ -54,8 +54,30 @@ body{
 .wrapper .content tbody  {
 border-bottom: 1px solid #dddddd;
 }
+.file_selecter{
+    font-size: 20px;
+}
+
+.download{
+display: flex;
+position: relative;
+margin-top:15%;
+border: green;
+display: block;
+}
+
+button{
+   
+   position: relative;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 5px 5px 10px;
+    border-radius: 5px;
+    margin-left: 60px;
+    width: 150px;
+    background: #a5d1a1;
+}
 
 
-    
     
 
