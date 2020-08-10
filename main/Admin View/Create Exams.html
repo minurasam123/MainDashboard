@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/Create-Exam.css">
     <title>E-learning Dashboard</title>
+    
 </head>
 <body>
 	<div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">			
@@ -37,116 +38,60 @@
 		<div id="content" class="p-4 p-md-5 pt-5">
 			<div class="main_content">
 				<div class="flexbox-container">
-					<h1>Create Exam</h1> 
-					<div class="column-1">
-					<div class="info">
-						 <label>Select Level :</label>
-						 
-							 <select name="levels">
-									<option value ="level-01">Certificate Level</option>
-									<option value ="level-02">Operational Level</option>
-									<option value ="level-03">Management Level</option>
-									<option value ="level-04">Strategic Level</option>
-									
-				
-							</select>
-				
-				<br>				
-				<div class="form-group">
-						<label> Select Subject : </label>	
-						<br>
-						<ul class="level">
-								<label> Certificate level :</label>
-								<select name="subject modules">
-								
-									  <option value ="module-01">BA1</option>
-									  <option value ="module-02">BA2</option>
-									  <option value ="module-03">BA3</option>
-									  <option value ="module-04">BA4</option>
-									  <option value ="module-05">None</option>
-								</ul>
-								</select>
-							</div>	
-						
-					<div class="form-group">
-								
-								<ul class="level">
-								<label> Operational level :</label>
-								<select name="subject modules">
-								
-									  <option value ="module-01">E1</option>
-									  <option value ="module-02">P1</option>
-									  <option value ="module-03">F1</option>
-									  <option value ="module-04">CS</option>
-									  <option value ="module-05">None</option>
-								</ul>
-								</select>
-							</div>	
-							
-				<div class="form-group">
-								
-								<ul class="level">
-								<label> Management level :</label>
-								<select name="subject modules">
-								
-									  <option value ="module-01">E2</option>
-									  <option value ="module-02">P2</option>
-									  <option value ="module-03">F2</option>
-									  <option value ="module-04">CS</option>
-									  <option value ="module-05">None</option>
-								</ul>
-								</select>
-							</div>	
-						</div>
-				</div>	
-			<div class="column-2">
-				<div class="form-group">
-							
-					<ul class="level">
-					<label> Strategic level :</label>
-					<select name="subject modules">
-					
-						  <option value ="module-01">E3</option>
-						  <option value ="module-02">P3</option>
-						  <option value ="module-03">F3</option>
-						  <option value ="module-04">CS</option>
-						  <option value ="module-05">None</option>
-					</ul>
-					</select>
-				</div>
-				<br>
-				<div class="form-group">
-								<label> Subject module : </label>
-								<td>
-								<input type="text" name="">
-								</td>
-				</div>
+					<h1>Create Exam</h1>
+			
+			<table>
+				<tr>
+					<td style="text-align: right;"><label>Level :</label></td>
+					<td><select id="lecture-level" onchange="levelSelect()">
+							<option value ="none">--Select Level--</option>
+							<option value ="Level1">Certificate Level</option>
+							<option value ="Level2">Operational Level</option>
+							<option value ="Level3">Management Level</option>
+							<option value ="Level4">Strategic Level</option>
+						</select></td>
+					<td></td>
+					<td style="text-align: right;"><label>Exam Type :</label></td>
+					<td><select id="types">
+						<option value ="none">--Select Exam Type--</option>
+						<option value ="type-01">Mock Exam</option>
+						<option value ="type-02">MCQ</option>		
+					</select></td>					
+				</tr>
 
-				<br>
-				<div class="form-group">
-						<label>Exam Type :</label>
-						
-							<select name="Types">
-									<option value ="type-01">Case Study</option>
-									<option value ="type-02">MCQ</option>
-										
-								</select> 	
-				</div>
-				
-				<br>
-				<div class="form-group">
-						<label>Upload CSV :</label>   
-							
-					<button name="upload">Upload</button>
-				</div>
+				<tr>
+					<td style="text-align: right;"><label>Subject : </label></td>
+					<td><select id="lecture-subject">
+						<option value ="none">--Select Subject--</option>
+						<option id="BA1" value ="BA1" class="lvl1">BA1</option>
+						<option  id ="BA2" value ="BA2" class="lvl1">BA2</option>
+						<option  id ="BA3" value ="BA3" class="lvl1">BA3</option>
+						<option  id ="BA4" value ="BA4" class="lvl1">BA4</option>
+						<option id ="E1" value ="E1" class="lvl2">E1</option>
+						<option id ="P1" value ="P1" class="lvl2">P1</option>
+						<option id ="F1" value ="F1" class="lvl2">F1</option>
+						<option id ="E2" value ="E2" class="lvl3">E2</option>
+						<option id ="P2" value ="P2" class="lvl3">P2</option>
+						<option id ="F2" value ="F2" class="lvl3">F2</option>
+						<option id ="E3" value ="E3" class="lvl4">E3</option>
+						<option id ="P3" value ="P3" class="lvl4">P3</option>
+						<option id ="F3" value ="F3" class="lvl4">F3</option>
+					</select></td>
+					<td style=""></td>
+					<td style="text-align: right;"><label>Upload CSV :</label></td>
+					<td><button id="upload">Upload</button></td>
+				</tr>
 
-						</div>
+			</table>
+
+			<div id="msg" style="opacity: 0; color: red;">Fill required fields.</div>
+			<button id="create" onclick="createExam();">Create</button>
+			
 			</div>
 		</div>
-		</div>	
+	</div>
 	
 	</div>
-		 
-	
+<script type="text/javascript" src="js/Create Exams.js"></script>
 </body>
 </html>
