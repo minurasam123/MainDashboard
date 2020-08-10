@@ -35,32 +35,111 @@
         </ul>
 
     	</nav>
-      <div class="main-container">      
-             <div class="profile-card">
-             <div class="img-container">
-                 <img src="images/profile%20img.jpg" style="width:100%">
-                 <form>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Upload profile picture</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-</form>
-                 <div class="title">
-                     <h2>  Full Name</h2> 
-                   <a class="btn btn-link" href=form.html role="button">change name</a>
+            <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="card">
+                  <div class="card-body">
+                     <div class="row">
+                        <div class="col">
+                           <center>
+                              <img width="100px" src="images/profile%20img.jpg"/>
+                           </center>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col">
+                           <center>
+                              <h4>Your Profile</h4>
+                              <button type="button" class="btn btn-primary">
+                                Profile <span class="badge badge-light">9</span>
+                                <span class="sr-only">Account Status</span>
+                                </button>
+                           </center>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col">
+                           <hr>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <label>Full Name</label>
+                           <div class="form-group">
+                              <input type="text" class="form-control" id="Textbox1" placeholder="Samaranayake M.D">
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <label>Date of Birth</label>
+                           <div class="form-group">
+                              <input type="date" Class="form-control" ID="TextBox2">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <label>Contact No</label>
+                           <div class="form-group">
+                              <input type="number" Class="form-control" ID="TextBox3"  placeholder="Contact No" >
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <label>Email ID</label>
+                           <div class="form-group">
+                              <input type="email" Class="form-control" ID="TextBox4"  placeholder="Email ID">
+                           </div>
+                        </div>
+                     </div>
                      
-                 </div>
-                 </div>
-             
-        
-            
-                 <p> <i class="fa fa-user info"></i>username</p>
-                 <p>CIMA ID </p>
-                 <p>batch</p>
-                 <p><i class="fa fa-envelope-square info"></i>email <br><a class="btn btn-link" href=form.html role="button">change email</a></p>
-                 <p><i class="fa fa-home info"></i>address <br><a class="btn btn-link" href=form.html role="button">change address</a></p>
-                 <p><i class="fa fa-phone-square info"></i> phone no <br><a class="btn btn-link" href=form.html role="button">change phone no</a></p>
-             <hr>
+                     <div class="row">
+                        <div class="col">
+                           <label>Full Address</label>
+                           <div class="form-group">
+                              <input type="text" Class="form-control" ID="TextBox5 " placeholder="Full Address">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col">
+                           <center>
+                              <span class="badge badge-pill badge-info">Login Credentials</span>
+                           </center>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <label>User ID</label>
+                           <div class="form-group">
+                              <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User ID" ReadOnly="True"></asp:TextBox>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <label>Old Password</label>
+                           <div class="form-group">
+                              <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Email ID" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <label>New Password</label>
+                           <div class="form-group">
+                              <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Email ID" TextMode="Password"></asp:TextBox>
+                           </div>
+                        </div>
+                     </div>
+           
+         
+            <div class="col-md-7">
+               <div class="card">
+                  <div class="card-body">
+                     
+                     <div class="row">
+                        <div class="col">
+                        
+                              <h4>Your courses</h4>
+                              <p><b>Enrolled courses</b></p>
+
+
                  <p><b>Enrolled courses</b></p>
                 <ul class="list-group">
                     <li class="list-group-item">B1</li>
@@ -68,8 +147,18 @@
                     <li class="list-group-item">B3</li>
                  </ul>
                  <a class="btn btn-primary" href="#" role="button">Enroll to new courses</a>
-</div>
+                            
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+                   </div>
+                </div>
              </div>
+                </div>
+                  </div>
              </div>
               </body>
     
