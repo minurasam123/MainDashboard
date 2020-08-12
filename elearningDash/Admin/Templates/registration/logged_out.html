@@ -1,0 +1,13 @@
+{% extends "registration/Base.html" %}
+
+{% block title %}Logged out{% endblock %}
+
+{% block content %}
+<div class="loginbox">
+<h1> User Logged Out</h1>
+  <div class="module">
+    <p>You have been successfully logged out.</p>
+    <p><a href="{% url 'login' %}" value="Log-in again">Login again</a></p>
+  </div>
+</div>
+{% endblock %}

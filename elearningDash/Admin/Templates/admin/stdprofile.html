@@ -1,102 +1,39 @@
-{% extends 'admin/main.html' %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Lectures</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- style sheets -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/Admin/Edit%20Lectures/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Admin/exams.css' %}">
+    
+  </head>
+  <body>
+	
+    {% include 'admin/navbar.html' %}
+
+    <div id="content" class="p-4 p-md-5 pt-5">
+		  <h1>Student List</h1>
 		
+			<div class="table-responsive">          
+			  <table class="table" id="myTableData">
+				  <tr style="background-color: cornflowerblue; color: white;">
+					<th>#</th>
+					<th>CIMA ID</th>
+					<th>Name</th>
+					<th>Level</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>&nbsp;</th>
+				  </tr>
+			  </table>
+			</div>
+		</div>
 
-{% block content %}
-  
-{% endblock content %}
-  
-
-      <div id="content" class="p-4 p-md-5 pt-5">
-  <div id="stdprofile" style="display: block;">
-        <div class="create-container">
-          <div class="create-exam">
-            <button value="Create Student" onclick="btnCreate();"><span class="fa fa-plus">  Create Student</span></button>
-          </div>
-        </div>
-        <h1>Student List</h1>
-
-    <div class="table-responsive">          
-      <table class="table" id="myTableData">
-          <tr style="background-color: cornflowerblue; color: white;">
-            <th>#</th>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>CIMA ID</th>
-            <th>Level</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>&nbsp;</th>
-          </tr>
-      </table>
-    </div>
-</div><!-- stdprofile -->
-
-
-
-    <!-- student creation part -->
-
-<div class="col-sm-auto offset-sm-2" id="student-creation-form" style="display: none; ">
-    <h3 style="font-weight: bold; padding-bottom: 50px; margin-left: 175px;margin-right: auto;" >Create New Profile</h3>
-            <form action="submit" method="">
-             
-            <div class="form-row" style="padding-bottom: 20px;">
-                <div class="form-group col-md-4">
-                  <label style="color: black; font-weight: bold;">First name</label>
-                  <input type="text" class="form-control" id="inputfname" name="fname" placeholder="Firstname" >
-                </div>
-                  <div class="form-group col-md-4">
-                    <label style="color: black; font-weight: bold;">Last name</label>
-                    <input type="text" class="form-control" id="inputlname" placeholder="Lastname">
-                  </div>
-                </div>
-            <div class="form-row" style="padding-bottom: 20px;">
-                <div class="form-group col-md-4">
-                  <label style="color: black; font-weight: bold;">CIMA ID</label>
-                  <input type="text" class="form-control" id="inputID" placeholder="ID">
-                </div>
-                  <div class="form-group col-md-4">
-                    <label style="color: black; font-weight: bold;">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
-                  </div>
-                </div>
-            <div class="form-row" style="padding-bottom: 20px;">
-                <div class="form-group col-md-4">
-                 <label style="color: black; font-weight: bold;">Level</label>
-                    <select class="form-control" id="level">
-                      <option value="none">Select Level</option>
-                      <option value ="Certificate Level">Certificate Level</option>
-                      <option value ="Operational Level">Operational Level</option>
-                      <option value ="Management Level">Management Level</option>
-                      <option value ="Strategic Level">Strategic Level</option>
-                    </select>
-                </div>
-                  <div class="form-group col-md-4">
-                    <label style="color: black; font-weight: bold;">Membership</label>
-                       <select class="form-control" id="membsh">
-                         <option value="none">Select</option>
-                         <option>Part Time</option>
-                         <option>Full Time</option>
-                       </select>
-                  </div>
-            </div>
-            <div class="form-row" style="padding-bottom: 20px;">
-                <div class="form-group col-md-4">
-                  <label style="color: black; font-weight: bold;">Username</label>
-                  <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                </div>
-                <div class="form-group col-md-4">
-                  <label style="color: black; font-weight: bold;">Password</label>
-                  <input type="password" class="form-control" id="inputPW" placeholder="Password">
-                </div>
-            </div>
-              <div id="msg" style="color: red; opacity: 0; font-weight: bold;">Please fill above fields</div>
-              <input type="button" value="Add Student" class="btn btn-primary text-center border rounded d-xl-flex" style="margin-left: 250px;margin-right: auto;margin-top: 5px;" onclick="addStudents(); ">
-            </form>
-            
-           
-</div><!-- student-creation-form -->
-      </div>
-    </div>
-    <script type="text/javascript" src="{% static 'js/Admin/stdprofile.js' %}"></script>
-  </body>
+	</body>
 </html>
