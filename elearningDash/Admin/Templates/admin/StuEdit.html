@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Admin Dashboard</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- style sheets -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/Admin/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Admin/exams.css' %}">
+	
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+                    <style>
+                        * {
+                            box-sizing: border-box
+                        }
+
+                        body, html {
+                            height: 100%;
+                            margin: 0;
+                            font-family: Arial;
+                        }
+
+                        .tablink {
+                            background-color: #555;
+                            color: Black;
+                            float: left;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            padding: 14px 16px;
+                            font-size: 17px;
+                            width: 20%;
+                        }
+
+                        .tablink:hover {
+                            background-color: #777;
+                        }
+
+                        .tabcontent {
+                            color: black;
+                            display: none;
+                            padding: 100px 20px;
+                            height: 100%;
+                        }
+
+                        #Level_1 {
+                            background-color: white;
+                        }
+
+                        #Level_2 {
+                            background-color: white;
+                        }
+
+                        #Level_3 {
+                            background-color: white;
+                        }
+
+                        #Level_4 {
+                            background-color: white;
+                        }
+
+                        #Level_5 {
+                            background-color: white;
+                        }
+
+                    </style>
+
+	
+					<script type= "text/javascript" src="table_script.js"></script>
+	
+</head>
+<body>
+
+    {% include 'admin/navbar.html' %}
+    
+    <!-- Page Content  -->
+    <div class="p-4 p-md-5 pt-5" id="content">
+        <div class="flexbox-container">
+            <div class="row-1">
+
+				<button class="tablink" id="defaultOpen" onclick="openPage('Level_1', this, 'Green')">Certificate Level</button>
+                <button class="tablink" onclick="openPage('Level_2', this, 'Green')">Operatonal Level</button>
+                <button class="tablink" onclick="openPage('Level_3', this, 'Green')">Management Level</button>
+                <button class="tablink" onclick="openPage('Level_4', this, 'Green')">Strategic Level</button>
+                <button class="tablink" onclick="openPage('Level_5', this, 'Green')">Case Studies</button>
+
+                <div class="tabcontent" id="Level_1">
+                    Subject <select id="selected1">
+                    <option value="A"> BA 1</option>
+                    <option value="B"> BA 2</option>
+                    <option value="C"> BA 3</option>
+                    <option value="D"> BA 4</option>
+                </select>
+                    <br>
+                    <br>
+                    <br>
+                    <table cellpadding=5 cellspacing=10 height=100% id="table1" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/14/117</td>
+                            <td id="name1_row1">T.N.D. Ranasingha</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/14/345</td>
+                            <td id="name1_row2">Y.D.K. Methmal</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/14/234</td>
+                            <td id="name1_row3">D.G. Kamal</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+                    <table cellpadding=5 cellspacing=10 height=100% id="table2" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/14/147</td>
+                            <td id="name1_row1">T.N.D. Yohan</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/14/325</td>
+                            <td id="name1_row2">Y.D.K. Suresha</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/14/234</td>
+                            <td id="name1_row3">D.G. Kamal</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+                    <table cellpadding=5 cellspacing=10 height=100% id="table3" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/14/117</td>
+                            <td id="name1_row1">T.N.D. Ranasinghe</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/14/299</td>
+                            <td id="name1_row2">Y.D. Ashika</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/14/294</td>
+                            <td id="name1_row3">D.K. Sithumini</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+                    <table cellpadding=5 cellspacing=10 height=100% id="table4" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/14/107</td>
+                            <td id="name1_row1">T.B. Jayani</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/14/322</td>
+                            <td id="name1_row2">Y.A. Dhanush</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/14/111</td>
+                            <td id="name1_row3">M.K. Vihanga</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+
+                    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+                    <script>
+                        chckSelected1();
+
+                        function chckSelected1() {
+                            var selectedOption1 = $("#selected1").children("option:selected").val();
+                            if (selectedOption1 === "A") {
+                                $("#table1").css({'display': 'block'});
+                                $("#table2").css({'display': 'none'});
+                                $("#table3").css({'display': 'none'});
+                                $("#table4").css({'display': 'none'});
+
+                            } else if (selectedOption1 === "B") {
+                                $("#table1").css({'display': 'none'});
+                                $("#table2").css({'display': 'block'});
+                                $("#table3").css({'display': 'none'});
+                                $("#table4").css({'display': 'none'});
+                            }
+                            else if (selectedOption1 === "C") {
+                                $("#table1").css({'display': 'none'});
+                                $("#table2").css({'display': 'none'});
+                                $("#table3").css({'display': 'block'});
+                                $("#table4").css({'display': 'none'});
+                            }
+                            else if (selectedOption1 === "D") {
+                                $("#table1").css({'display': 'none'});
+                                $("#table2").css({'display': 'none'});
+                                $("#table3").css({'display': 'none'});
+                                $("#table4").css({'display': 'block'});
+                            }
+                        }
+
+                        $("#selected1").change(function(){
+                            chckSelected1();
+                        });
+
+                    </script>
+
+
+                </div>
+
+
+                <script>
+
+
+                    function edit1_row(no) {
+                        document.getElementById("edit1_button" + no).style.display = "none";
+                        document.getElementById("save1_button" + no).style.display = "block";
+
+                        var regno1 = document.getElementById("regno1_row" + no);
+                        var name1 = document.getElementById("name1_row" + no);
+
+                        var regno1_data = regno1.innerHTML;
+                        var name1_data = name1.innerHTML;
+
+                        regno1.innerHTML = "<input type='text' id='regno1_text" + no + "' value='" + regno1_data + "'>";
+                        name1.innerHTML = "<input type='text' id='name1_text" + no + "' value='" + name1_data + "'>";
+                    }
+
+                    function save1_row(no) {
+                        var regno1_val = document.getElementById("regno1_text" + no).value;
+                        var name1_val = document.getElementById("name1_text" + no).value;
+
+                        document.getElementById("regno1_row" + no).innerHTML = regno1_val;
+                        document.getElementById("name1_row" + no).innerHTML = name1_val;
+
+                        document.getElementById("edit1_button" + no).style.display = "block";
+                        document.getElementById("save1_button" + no).style.display = "none";
+                    }
+
+                    function delete1_row(no) {
+                        document.getElementById("row" + no + "").outerHTML = "";
+                    }
+
+                    function add1_row() {
+                        var new_regno1 = document.getElementById("new_regno1").value;
+                        var new_name1 = document.getElementById("new_name1").value;
+
+                        var table1 = document.getElementById("data_table1");
+                        var table1_len = (table1.rows.length) - 1;
+                        var row1 = table1.insertRow(table1_len).outerHTML = "<tr id='row1" + table1_len + "'><td id='regno1_row" + table1_len + "'>" + new_regno1 + "</td><td id='name1_row" + table1_len + "'>" + new_name1 + "</td><td><input type='button' id='edit1_button" + table1_len + "' value='Edit' class='edit' onclick='edit1_row(" + table1_len + ")'> <input type='button' id='save1_button" + table1_len + "' value='Save' class='save' onclick='save1_row(" + table1_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete1_row(" + table1_len + ")'></td></tr>";
+
+                        document.getElementById("new_regno1").value = "";
+                        document.getElementById("new_name1").value = "";
+                    }
+                </script>
+
+            </div>
+
+			 <div class="row-2">
+            <div class="tabcontent" id="Level_2">
+
+                Subject <select id="selected2">
+                <option value="E">E1</option>
+                <option value="F">P1</option>
+				<option value="G">F1</option>
+				</select>
+                <br>
+                <br>
+                <br>
+
+                <table cellpadding=5 cellspacing=10 height=100% id="table5" width=100%>
+                    <tr>
+                        <th align="left">CIMA ID</th>
+                        <th align="left">Name</th>
+                    </tr>
+
+                    <tr id="row21">
+                        <td id="regno2_row1">C/15/017</td>
+                        <td id="name2_row1">H.D. Kasun</td>
+                        <td>
+                            <input class="edit" id="edit2_button1" onclick="edit2_row('1')" type="button" value="Edit">
+                            <input class="save" id="save2_button1" onclick="save2_row('1')" type="button" value="Save">
+                            <input class="delete" onclick="delete2_row('21')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr id="row22">
+                        <td id="regno2_row2">C/15/145</td>
+                        <td id="name2_row2">U.V. Rathnayake</td>
+                        <td>
+                            <input class="edit" id="edit2_button2" onclick="edit2_row('2')" type="button" value="Edit">
+                            <input class="save" id="save2_button2" onclick="save2_row('2')" type="button" value="Save">
+                            <input class="delete" onclick="delete2_row('22')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr id="row23">
+                        <td id="regno2_row3">C/15/404</td>
+                        <td id="name2_row3">S.J. Madumal</td>
+                        <td>
+                            <input class="edit" id="edit2_button3" onclick="edit2_row('3')" type="button" value="Edit">
+                            <input class="save" id="save2_button3" onclick="save2_row('3')" type="button" value="Save">
+                            <input class="delete" onclick="delete2_row('23')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input id="new_regno2" type="text"></td>
+                        <td><input id="new_name2" type="text"></td>
+                        <td><input class="add" onclick="add2_row();" type="button" value="Add Row"></td>
+                    </tr>
+
+                </table>
+				<table cellpadding=5 cellspacing=10 height=100% id="table6" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/15/117</td>
+                            <td id="name1_row1">N.D. Ranasha</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/15/335</td>
+                            <td id="name1_row2">Y.D.K. Maneesha</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/15/234</td>
+                            <td id="name1_row3">D.G. Sethmi</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+				<table cellpadding=5 cellspacing=10 height=100% id="table7" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/15/117</td>
+                            <td id="name1_row1">N.D.Deumi</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/15/225</td>
+                            <td id="name1_row2">Y.K. Peshan</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/15/074</td>
+                            <td id="name1_row3">S.H. Senu</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+					
+				
+                <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+                    <script>
+                        chckSelected2();
+
+                        function chckSelected2() {
+                            var selectedOption2 = $("#selected2").children("option:selected").val();
+                            if (selectedOption2 === "E") {
+                                $("#table5").css({'display': 'block'});
+                                $("#table6").css({'display': 'none'});
+                                $("#table7").css({'display': 'none'});
+
+                            } else if (selectedOption2 === "F") {
+                                $("#table5").css({'display': 'none'});
+                                $("#table6").css({'display': 'block'});
+                                $("#table7").css({'display': 'none'});
+                            }
+                            else if (selectedOption2 === "G") {
+                                $("#table5").css({'display': 'none'});
+                                $("#table6").css({'display': 'none'});
+                                $("#table7").css({'display': 'block'});
+                             }
+                        }
+
+                        $("#selected2").change(function(){
+                            chckSelected2();
+                        });
+
+                    </script>
+
+				
+				
+            </div>
+
+            <script>
+				function edit2_row(no) {
+                    document.getElementById("edit2_button" + no).style.display = "none";
+                    document.getElementById("save2_button" + no).style.display = "block";
+
+                    var regno2 = document.getElementById("regno2_row" + no);
+                    var name2 = document.getElementById("name2_row" + no);
+
+                    var regno2_data = regno2.innerHTML;
+                    var name2_data = name2.innerHTML;
+
+                    regno2.innerHTML = "<input type='text' id='regno2_text" + no + "' value='" + regno2_data + "'>";
+                    name2.innerHTML = "<input type='text' id='name2_text" + no + "' value='" + name2_data + "'>";
+                }
+				
+				function save2_row(no) {
+                    var regno2_val = document.getElementById("regno2_text" + no).value;
+                    var name2_val = document.getElementById("name2_text" + no).value;
+
+                    document.getElementById("regno2_row" + no).innerHTML = regno2_val;
+                    document.getElementById("name2_row" + no).innerHTML = name2_val;
+
+                    document.getElementById("edit2_button" + no).style.display = "block";
+                    document.getElementById("save2_button" + no).style.display = "none";
+                }
+
+                function delete2_row(no) {
+                    document.getElementById("row" + no + "").outerHTML = "";
+                }
+
+                function add2_row() {
+                    var new_regno2 = document.getElementById("new_regno2").value;
+                    var new_name2 = document.getElementById("new_name2").value;
+
+                    var table2 = document.getElementById("data_table2");
+                    var table2_len = (table2.rows.length) - 1;
+                    var row2 = table2.insertRow(table2_len).outerHTML = "<tr id='row2" + table2_len + "'><td id='regno2_row" + table2_len + "'>" + new_regno2 + "</td><td id='name2_row" + table2_len + "'>" + new_name2 + "</td><td><input type='button' id='edit2_button" + table2_len + "' value='Edit' class='edit' onclick='edit2_row(" + table2_len + ")'> <input type='button' id='save2_button" + table2_len + "' value='Save' class='save' onclick='save2_row(" + table2_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete2_row(" + table2_len + ")'></td></tr>";
+
+                    document.getElementById("new_regno2").value = "";
+                    document.getElementById("new_name2").value = "";
+                }
+            </script>
+        </div>
+
+        <div class="row-3">
+
+            <div class="tabcontent" id="Level_3">
+
+             Subject <select id="selected3">
+                <option value="H"> E2</option>
+                <option value="I"> P2</option>
+                <option value="J"> F2</option>
+            </select>
+                <br>
+                <br>
+                <br>
+
+                <table cellpadding=5 cellspacing=10 height=100% id="table8" width=100%>
+                    <tr>
+                        <th align="left">CIMA ID</th>
+                        <th align="left">Name</th>
+                    </tr>
+
+                    <tr id="row31">
+                        <td id="regno3_row1">C/16/317</td>
+                        <td id="name3_row1">H. Wickremasingha</td>
+                        <td>
+                            <input class="edit" id="edit3_button1" onclick="edit3_row('1')" type="button" value="Edit">
+                            <input class="save" id="save3_button1" onclick="save3_row('1')" type="button" value="Save">
+                            <input class="delete" onclick="delete3_row('31')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr id="row32">
+                        <td id="regno3_row2">C/16/503</td>
+                        <td id="name3_row2">D.S. Gunawardana</td>
+                        <td>
+                            <input class="edit" id="edit3_button2" onclick="edit3_row('2')" type="button" value="Edit">
+                            <input class="save" id="save3_button2" onclick="save3_row('2')" type="button" value="Save">
+                            <input class="delete" onclick="delete3_row('32')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr id="row33">
+                        <td id="regno3_row3">C/16/084</td>
+                        <td id="name3_row3">K.N. Gamage</td>
+                        <td>
+                            <input class="edit" id="edit3_button3" onclick="edit3_row('3')" type="button" value="Edit">
+                            <input class="save" id="save3_button3" onclick="save3_row('3')" type="button" value="Save">
+                            <input class="delete" onclick="delete3_row('33')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input id="new_regno3" type="text"></td>
+                        <td><input id="new_name3" type="text"></td>
+                        <td><input class="add" onclick="add3_row();" type="button" value="Add Row"></td>
+                    </tr>
+
+                </table>
+				
+				<table cellpadding=5 cellspacing=10 height=100% id="table9" width=100%>
+				
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/16/112</td>
+                            <td id="name1_row1">F.O. Danuka</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/16/215</td>
+                            <td id="name1_row2">M.K. Yomal</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/16/004</td>
+                            <td id="name1_row3">P.K. Fathima</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+				
+				<table cellpadding=5 cellspacing=10 height=100% id="table10" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/16/127</td>
+                            <td id="name1_row1">Y.U. Rupasena</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/16/085</td>
+                            <td id="name1_row2">D.S. Gunawardhana</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/16/434</td>
+                            <td id="name1_row3">D.G. Liyanage</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+				
+				<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+                    <script>
+                        chckSelected3();
+
+                        function chckSelected3() {
+                            var selectedOption3 = $("#selected3").children("option:selected").val();
+                            if (selectedOption3 === "H") {
+                                $("#table8").css({'display': 'block'});
+                                $("#table9").css({'display': 'none'});
+                                $("#table10").css({'display': 'none'});
+
+                            } else if (selectedOption3 === "I") {
+                                $("#table8").css({'display': 'none'});
+                                $("#table9").css({'display': 'block'});
+                                $("#table10").css({'display': 'none'});
+                            }
+                            else if (selectedOption3 === "J") {
+                                $("#table8").css({'display': 'none'});
+                                $("#table9").css({'display': 'none'});
+                                $("#table10").css({'display': 'block'});
+                             }
+                        }
+
+                        $("#selected3").change(function(){
+                            chckSelected3();
+                        });
+
+                    </script>
+				
+            </div>
+
+
+            <script>
+
+
+                function edit3_row(no) {
+                    document.getElementById("edit3_button" + no).style.display = "none";
+                    document.getElementById("save3_button" + no).style.display = "block";
+
+                    var regno3 = document.getElementById("regno3_row" + no);
+                    var name3 = document.getElementById("name3_row" + no);
+
+                    var regno3_data = regno3.innerHTML;
+                    var name3_data = name3.innerHTML;
+
+                    regno3.innerHTML = "<input type='text' id='regno3_text" + no + "' value='" + regno3_data + "'>";
+                    name3.innerHTML = "<input type='text' id='name3_text" + no + "' value='" + name3_data + "'>";
+                }
+
+                function save3_row(no) {
+                    var regno3_val = document.getElementById("regno3_text" + no).value;
+                    var name3_val = document.getElementById("name3_text" + no).value;
+
+                    document.getElementById("regno3_row" + no).innerHTML = regno3_val;
+                    document.getElementById("name3_row" + no).innerHTML = name3_val;
+
+                    document.getElementById("edit3_button" + no).style.display = "block";
+                    document.getElementById("save3_button" + no).style.display = "none";
+                }
+
+                function delete3_row(no) {
+                    document.getElementById("row" + no + "").outerHTML = "";
+                }
+
+                function add3_row() {
+                    var new_regno3 = document.getElementById("new_regno3").value;
+                    var new_name3 = document.getElementById("new_name3").value;
+
+                    var table3 = document.getElementById("data_table3");
+                    var table3_len = (table3.rows.length) - 1;
+                    var row3 = table3.insertRow(table3_len).outerHTML = "<tr id='row3" + table3_len + "'><td id='regno3_row" + table3_len + "'>" + new_regno3 + "</td><td id='name3_row" + table3_len + "'>" + new_name3 + "</td><td><input type='button' id='edit3_button" + table3_len + "' value='Edit' class='edit' onclick='edit3_row(" + table3_len + ")'> <input type='button' id='save3_button" + table3_len + "' value='Save' class='save' onclick='save3_row(" + table3_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete3_row(" + table3_len + ")'></td></tr>";
+
+                    document.getElementById("new_regno3").value = "";
+                    document.getElementById("new_name3").value = "";
+                }
+            </script>
+
+
+        </div>
+        <div class="row-4">
+            <div class="tabcontent" id="Level_4">
+
+                Subject <select id="selected4">
+                <option value="K"> E3</option>
+                <option value="L"> P3</option>
+                <option value="M"> F3</option>
+            </select>
+                <br>
+                <br>
+                <br>
+
+                <table cellpadding=5 cellspacing=10 height=100% id="table11" width=100%>
+                    <tr>
+                        <th align="left">CIMA ID</th>
+                        <th align="left">Name</th>
+                    </tr>
+
+                    <tr id="row41">
+                        <td id="regno4_row1">C/17/122</td>
+                        <td id="name4_row1">M.H. Rajapaksha</td>
+                        <td>
+                            <input class="edit" id="edit4_button1" onclick="edit4_row('1')" type="button" value="Edit">
+                            <input class="save" id="save4_button1" onclick="save4_row('1')" type="button" value="Save">
+                            <input class="delete" onclick="delete2_row('41')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr id="row42">
+                        <td id="regno4_row2">C/17/375</td>
+                        <td id="name4_row2">P.K. Gunarathne</td>
+                        <td>
+                            <input class="edit" id="edit4_button2" onclick="edit4_row('2')" type="button" value="Edit">
+                            <input class="save" id="save4_button2" onclick="save4_row('2')" type="button" value="Save">
+                            <input class="delete" onclick="delete4_row('22')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr id="row43">
+                        <td id="regno4_row3">C/17/470</td>
+                        <td id="name4_row3">H.V. Kumari</td>
+                        <td>
+                            <input class="edit" id="edit4_button3" onclick="edit4_row('3')" type="button" value="Edit">
+                            <input class="save" id="save4_button3" onclick="save4_row('3')" type="button" value="Save">
+                            <input class="delete" onclick="delete4_row('43')" type="button" value="Delete">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input id="new_regno4" type="text"></td>
+                        <td><input id="new_name4" type="text"></td>
+                        <td><input class="add" onclick="add4_row();" type="button" value="Add Row"></td>
+                    </tr>
+
+                </table>
+				
+				<table cellpadding=5 cellspacing=10 height=100% id="table12" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/17/007</td>
+                            <td id="name1_row1">T.K. Ruwan</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/17/059</td>
+                            <td id="name1_row2">A.S. Ruksiri</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/17/024</td>
+                            <td id="name1_row3">Y.R. Rameesh</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+					
+				<table cellpadding=5 cellspacing=10 height=100% id="table13" width=100%>
+                        <tr>
+                            <th align="left">CIMA ID</th>
+                            <th align="left">Name</th>
+                        </tr>
+
+                        <tr id="row11">
+                            <td id="regno1_row1">C/17/177</td>
+                            <td id="name1_row1">N.D. Rupasingha</td>
+                            <td>
+                                <input class="edit" id="edit1_button1" onclick="edit1_row('1')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button1" onclick="save1_row('1')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('11')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row12">
+                            <td id="regno1_row2">C/17/465</td>
+                            <td id="name1_row2">W.S. Perera</td>
+                            <td>
+                                <input class="edit" id="edit1_button2" onclick="edit1_row('2')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button2" onclick="save1_row('2')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('12')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr id="row13">
+                            <td id="regno1_row3">C/17/084</td>
+                            <td id="name1_row3">S.N. Danushi</td>
+                            <td>
+                                <input class="edit" id="edit1_button3" onclick="edit1_row('3')" type="button"
+                                       value="Edit">
+                                <input class="save" id="save1_button3" onclick="save1_row('3')" type="button"
+                                       value="Save">
+                                <input class="delete" onclick="delete1_row('13')" type="button" value="Delete">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="new_regno1" type="text"></td>
+                            <td><input id="new_name1" type="text"></td>
+                            <td><input class="add" onclick="add1_row();" type="button" value="Add Row"></td>
+                        </tr>
+
+                    </table>
+					
+					<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+                    <script>
+                        chckSelected4();
+
+                        function chckSelected4() {
+                            var selectedOption4 = $("#selected4").children("option:selected").val();
+                            if (selectedOption4 === "K") {
+                                $("#table11").css({'display': 'block'});
+                                $("#table12").css({'display': 'none'});
+                                $("#table13").css({'display': 'none'});
+
+                            } else if (selectedOption4 === "L") {
+                                $("#table11").css({'display': 'none'});
+                                $("#table12").css({'display': 'block'});
+                                $("#table13").css({'display': 'none'});
+                            }
+                            else if (selectedOption4 === "M") {
+                                $("#table11").css({'display': 'none'});
+                                $("#table12").css({'display': 'none'});
+                                $("#table13").css({'display': 'block'});
+                            }
+                        }
+
+                        $("#selected4").change(function(){
+                            chckSelected4();
+                        });
+
+                    </script>
+            </div>
+
+
+            <script>
+
+
+                function edit4_row(no) {
+                    document.getElementById("edit4_button" + no).style.display = "none";
+                    document.getElementById("save4_button" + no).style.display = "block";
+
+                    var regno4 = document.getElementById("regno4_row" + no);
+                    var name4 = document.getElementById("name4_row" + no);
+
+                    var regno4_data = regno4.innerHTML;
+                    var name4_data = name4.innerHTML;
+
+                    regno4.innerHTML = "<input type='text' id='regno4_text" + no + "' value='" + regno4_data + "'>";
+                    name4.innerHTML = "<input type='text' id='name4_text" + no + "' value='" + name4_data + "'>";
+                }
+
+                function save4_row(no) {
+                    var regno4_val = document.getElementById("regno4_text" + no).value;
+                    var name4_val = document.getElementById("name4_text" + no).value;
+
+                    document.getElementById("regno4_row" + no).innerHTML = regno4_val;
+                    document.getElementById("name4_row" + no).innerHTML = name4_val;
+
+                    document.getElementById("edit4_button" + no).style.display = "block";
+                    document.getElementById("save4_button" + no).style.display = "none";
+                }
+
+                function delete4_row(no) {
+                    document.getElementById("row" + no + "").outerHTML = "";
+                }
+
+                function add4_row() {
+                    var new_regno4 = document.getElementById("new_regno4").value;
+                    var new_name4 = document.getElementById("new_name4").value;
+
+                    var table4 = document.getElementById("data_table4");
+                    var table4_len = (table4.rows.length) - 1;
+                    var row4 = table4.insertRow(table4_len).outerHTML = "<tr id='row4" + table4_len + "'><td id='regno4_row" + table4_len + "'>" + new_regno4 + "</td><td id='name4_row" + table4_len + "'>" + new_name4 + "</td><td><input type='button' id='edit4_button" + table4_len + "' value='Edit' class='edit' onclick='edit4_row(" + table4_len + ")'> <input type='button' id='save4_button" + table4_len + "' value='Save' class='save' onclick='save4_row(" + table4_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete4_row(" + table4_len + ")'></td></tr>";
+
+                    document.getElementById("new_regno4").value = "";
+                    document.getElementById("new_name4").value = "";
+                }
+            </script>
+
+        </div>
+
+
+        <div class="tabcontent" id="Level_5">
+            <br>
+            <br>
+            <br>
+            <table cellpadding=5 cellspacing=10 height=50% id="data_table5" width=100%>
+                <tr>
+                    <th align="left">CIMA ID</th>
+                    <th align="left">Name</th>
+                </tr>
+
+                <tr id="row51">
+                    <td id="regno5_row1">C/18/017</td>
+                    <td id="name5_row1">N.H. Jayakody</td>
+                    <td>
+                        <input class="edit" id="edit5_button1" onclick="edit5_row('1')" type="button" value="Edit">
+                        <input class="save" id="save5_button1" onclick="save5_row('1')" type="button" value="Save">
+                        <input class="delete" onclick="delete1_row('51')" type="button" value="Delete">
+                    </td>
+                </tr>
+
+                <tr id="row52">
+                    <td id="regno5_row2">C/18/576</td>
+                    <td id="name5_row2">A.B. Hansani</td>
+                    <td>
+                        <input class="edit" id="edit5_button2" onclick="edit5_row('2')" type="button" value="Edit">
+                        <input class="save" id="save5_button2" onclick="save5_row('2')" type="button" value="Save">
+                        <input class="delete" onclick="delete5_row('52')" type="button" value="Delete">
+                    </td>
+                </tr>
+
+                <tr id="row53">
+                    <td id="regno5_row3">C/18/246</td>
+                    <td id="name5_row3">D.K. Dhesh</td>
+                    <td>
+                        <input class="edit" id="edit5_button3" onclick="edit5_row('3')" type="button" value="Edit">
+                        <input class="save" id="save5_button3" onclick="save5_row('3')" type="button" value="Save">
+                        <input class="delete" onclick="delete5_row('53')" type="button" value="Delete">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input id="new_regno5" type="text"></td>
+                    <td><input id="new_name5" type="text"></td>
+                    <td><input class="add" onclick="add5_row();" type="button" value="Add Row"></td>
+                </tr>
+
+
+        </div>
+
+
+        <script>
+
+
+            function edit5_row(no) {
+                document.getElementById("edit5_button" + no).style.display = "none";
+                document.getElementById("save5_button" + no).style.display = "block";
+
+                var regno5 = document.getElementById("regno5_row" + no);
+                var name5 = document.getElementById("name5_row" + no);
+
+                var regno5_data = regno5.innerHTML;
+                var name5_data = name5.innerHTML;
+
+                regno5.innerHTML = "<input type='text' id='regno5_text" + no + "' value='" + regno5_data + "'>";
+                name5.innerHTML = "<input type='text' id='name5_text" + no + "' value='" + name5_data + "'>";
+            }
+
+            function save5_row(no) {
+                var regno5_val = document.getElementById("regno5_text" + no).value;
+                var name5_val = document.getElementById("name5_text" + no).value;
+
+                document.getElementById("regno5_row" + no).innerHTML = regno5_val;
+                document.getElementById("name5_row" + no).innerHTML = name5_val;
+
+                document.getElementById("edit5_button" + no).style.display = "block";
+                document.getElementById("save5_button" + no).style.display = "none";
+            }
+
+            function delete5_row(no) {
+                document.getElementById("row" + no + "").outerHTML = "";
+            }
+
+            function add5_row() {
+                var new_regno5 = document.getElementById("new_regno5").value;
+                var new_name5 = document.getElementById("new_name5").value;
+
+                var table5 = document.getElementById("data_table5");
+                var table5_len = (table5.rows.length) - 1;
+                var row5 = table5.insertRow(table5_len).outerHTML = "<tr id='row5" + table5_len + "'><td id='regno5_row" + table5_len + "'>" + new_regno5 + "</td><td id='name5_row" + table5_len + "'>" + new_name5 + "</td><td><input type='button' id='edit5_button" + table5_len + "' value='Edit' class='edit' onclick='edit5_row(" + table5_len + ")'> <input type='button' id='save5_button" + table5_len + "' value='Save' class='save' onclick='save5_row(" + table5_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete5_row(" + table5_len + ")'></td></tr>";
+
+                document.getElementById("new_regno5").value = "";
+                document.getElementById("new_name5").value = "";
+            }
+        </script>
+
+    </div>
+
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</div>
+</div>
+
+</body>
+</html>
+
