@@ -6,4 +6,6 @@ def index(request):
     return HttpResponse("Hello World")
 
 def admin(request):
-    return render(request,'admin/CaseStu.html')
+    return render(request,'admin/admin.html')
+
+    
