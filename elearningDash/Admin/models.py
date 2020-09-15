@@ -20,6 +20,7 @@ class Lecturer(models.Model):
     first_Name = models.CharField(max_length=200, null=True)
     last_Name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
+    
 
 
 class Student(models.Model):
@@ -50,6 +51,7 @@ class content(models.Model):
         ("pdf","pdf"),
         ("csv","csv")
     )
+    content_type = models.CharField(choices=content)
     cont_name = models.CharField(max_length=100)
     student = models.ManyToManyField(Student)
     course = models.ForeignKey(Courses, on_delete=models.CASCADE,null=True)
