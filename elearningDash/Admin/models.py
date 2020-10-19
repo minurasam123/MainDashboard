@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import models
 
 # Create your models here.
 class Account(models.Model):
@@ -51,7 +52,7 @@ class content(models.Model):
         ("pdf","pdf"),
         ("csv","csv")
     )
-    content_type = models.CharField(choices=content)
+    content_type = models.CharField(choices=content, max_length=3)
     cont_name = models.CharField(max_length=100)
     student = models.ManyToManyField(Student)
     course = models.ForeignKey(Courses, on_delete=models.CASCADE,null=True)

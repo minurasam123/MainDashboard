@@ -4,6 +4,7 @@ body {
     background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');
     font-family: sans-serif;
     background-repeat: no-repeat;
+    position: inherit;
 }
 
 .loginbox {
