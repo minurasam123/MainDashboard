@@ -1,5 +1,7 @@
-# from django.http import HttpResponseRedirect
 from django.shortcuts import render
+# from django.contrib.auth import authenticate
+# from django.contrib.auth.forms import AuthenticationForm
+from .models import Student, Course
 
 
 def home(request):
@@ -27,7 +29,12 @@ def strat(request):
 
 
 def admin(request):
-    return render(request, 'admin/admin.html')
+    user = request.user
+    if user is not None:
+        if user.is_staff:
+            return render(request, 'admin/admin.html')
+        else:
+            return render(request, 'Student/student_dashboard.html')
 
 
 def all_student_info(request):
@@ -35,11 +42,17 @@ def all_student_info(request):
 
 
 def view_courses(request):
-    return render(request, 'admin/view_courses.html')
+    courses = Course.objects.all()
+
+    return render(request, 'admin/view_courses.html', {'courses': courses})
+
+
+def content(request):
+    return render(request, 'admin/content.html')
 
 
 def drop_lectures(request):
-    return render(request, 'admin/lecture_notes.html')
+    return render(request, 'admin/Drop Lectures.html')
 
 
 def lecture_notes(request):
@@ -47,7 +60,8 @@ def lecture_notes(request):
 
 
 def student_profile(request):
-    return render(request, 'admin/stdprofile.html')
+    students = Student.objects.all()
+    return render(request, 'admin/stdprofile.html', {'students': students})
 
 
 def student_details(request):
@@ -55,7 +69,7 @@ def student_details(request):
 
 
 def student_edit(request):
-    return render(request, 'admin/video_lec.html')
+    return render(request, 'admin/StuEdit.html')
 
 
 def student_form(post):

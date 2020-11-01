@@ -23,14 +23,20 @@
 		  <div class="table-responsive">          
 			<table class="table" id="myTableData">
 				<tr style="background-color: cornflowerblue; color: white;">
-				  <th>#</th>
-				  <th>CIMA ID</th>
-				  <th>Name</th>
+				  <th>ID</th>
 				  <th>Level</th>
-				  <th>Email</th>
-				  <th>Password</th>
+				  <th>Course ID</th>
+				  <th>Course</th>
 				  <th>&nbsp;</th>
 				</tr>
+				{% for i in courses %}
+					<tr>
+						<td>{{i.id}}</td>
+						<td>{{i.level}}</td>
+						<td>{{i.course_id}}</td>
+						<td>{{i.name}}</td>
+					</tr>
+				{% endfor %}
 			</table>
 		  </div>
 		</div>

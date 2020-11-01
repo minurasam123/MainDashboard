@@ -2,13 +2,15 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from .fields import OrderField
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 
 
 class Lecturer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
     password = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
@@ -35,11 +37,12 @@ class Level(models.Model):
 
 
 class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE, null=True)
     level = models.ForeignKey(Level, on_delete=models.CASCADE, null=True)
     Cima_ID = models.CharField(max_length=50)
     name = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
+    email = models.EmailField(max_length=254)
     password = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
@@ -119,3 +122,30 @@ class Image(ItemBase):
 
 class Video(ItemBase):
     url = models.URLField()
+
+
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+#     name = models.CharField(max_length=200, null=True, blank=True)
+#     email = models.EmailField(max_length=200, null=True, blank=True)
+
+#     def __str__(self):
+#         return str(self.user)
+
+
+# def create_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
+#         print('Profile Created!')
+
+
+# post_save.connect(create_profile, sender=User)
+
+
+# def update_profile(sender, instance, created, **kwargs):
+#     if created is False:
+#         instance.profile.save()
+#         print('Profile Updated')
+
+
+# post_save.connect(update_profile, sender=User)
