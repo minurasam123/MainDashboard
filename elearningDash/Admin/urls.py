@@ -13,6 +13,7 @@ urlpatterns = [
     path('accounts/profile/courses', views.view_courses, name='v_courses'),
     path('accounts/profile/content', views.content, name='lecnotesvids'),
     path('accounts/profile/editstudent', views.student_edit, name='edit_stud'),
+    path('accounts/profile/es/cs', views.load_course, name='courses_dropdown'),
     path('accounts/profile/lec_notes', views.lecture_notes, name='addNotes'),
     path('accounts/profile/students', views.student_profile, name='v_students')
 ]

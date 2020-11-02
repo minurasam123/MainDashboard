@@ -26,7 +26,7 @@
 				  <th>ID</th>
 				  <th>Level</th>
 				  <th>Course ID</th>
-				  <th>Course</th>
+				  <th>Course Name</th>
 				  <th>&nbsp;</th>
 				</tr>
 				{% for i in courses %}
@@ -35,6 +35,7 @@
 						<td>{{i.level}}</td>
 						<td>{{i.course_id}}</td>
 						<td>{{i.name}}</td>
+						<td><a href="">Delete</a></td>
 					</tr>
 				{% endfor %}
 			</table>

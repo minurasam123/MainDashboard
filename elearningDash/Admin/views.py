@@ -1,7 +1,7 @@
 from django.shortcuts import render
 # from django.contrib.auth import authenticate
 # from django.contrib.auth.forms import AuthenticationForm
-from .models import Student, Course
+from .models import Student, Course, Level
 
 
 def home(request):
@@ -42,7 +42,8 @@ def all_student_info(request):
 
 
 def view_courses(request):
-    courses = Course.objects.all()
+    user = request.user
+    courses = Course.objects.filter(lecturer=user.lecturer)
 
     return render(request, 'admin/view_courses.html', {'courses': courses})
 
@@ -60,7 +61,7 @@ def lecture_notes(request):
 
 
 def student_profile(request):
-    students = Student.objects.all()
+    students = Student.objects.all().order_by('level_id')
     return render(request, 'admin/stdprofile.html', {'students': students})
 
 
@@ -69,7 +70,15 @@ def student_details(request):
 
 
 def student_edit(request):
-    return render(request, 'admin/StuEdit.html')
+    levels = Level.objects.all()
+    return render(request, 'admin/StuEdit.html', {'levels': levels})
+
+
+def load_course(request):
+    levels_get = request.GET.get('level')
+    user = Level.objects.get(level=levels_get)
+    course = Course.objects.filter(level_id=user).order_by('name')
+    return render(request, 'admin/course_dropdown.html', {'course': course})
 
 
 def student_form(post):

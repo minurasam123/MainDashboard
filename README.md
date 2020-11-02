@@ -11,6 +11,24 @@ An E-Learning Platform for CIMA Students
 This will be an online website hosted by Google Cloud Hosting 
 (https://cloud.google.com/solutions/web-hosting#solutions)
 
+Install the requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create the database:
+
+```bash
+python manage.py migrate
+```
+
+Finally, run the development server:
+
+```bash
+python manage.py runserver
+```
+
 ## Built With
 
 * [Python/Django](https://www.djangoproject.com/start/overview)
