@@ -43,7 +43,6 @@
     {% include 'admin/navbar.html' %}
     <div class="p-4 p-md-5 pt-5" id="content">
         <form method="post" id='indexform' data-courses-url="{% url 'courses_dropdown' %}">
-            
             <div class="row">
             <div class="col">
                 <div class="col-md">
@@ -82,27 +81,17 @@
                 
                    
             </div>
-
         </div>
-    </form>        
-    <h1>Students</h1>
+    </form>
+        <form method="post" id='indexform2' data-courses-url1="{% url 'std_list' %}">
+        <h3>Students</h3>
 		
-    <div class="table-responsive" style="align-content: center;">          
-      <table class="table" id="myTableData">
-          <tr style="background-color: cornflowerblue; color: white;">
-            <th>CIMA ID</th>
-            <th>Name</th>
-            <th>&nbsp;</th>
-          </tr>
-          {% for i in studs %}
-              <tr>
-                  <td>{{i.Cima_ID}}</td>
-                  <td>{{i.name}}</td>
-                  <td><a href="">Delete</a></td>
-              </tr>
-          {% endfor %}
-      </table>
-    </div>
+        <div class="table-responsive" style="align-content: center;">          
+          <table class="table" id="myTableData">
+              
+              
+          </table>
+        </div>        
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
@@ -118,6 +107,21 @@
                 },
                 success: function(data){
                     $("#courses").html(data);
+                }
+            });
+        });
+        $("#level").change(function()
+        {
+            var url = $("#indexform2").attr("data-courses-url1");
+            var levelvar = $(this).val();
+            
+            $.ajax({
+                url: url,
+                data: {
+                    'level': levelvar
+                },
+                success: function(data){
+                    $("#myTableData").html(data);
                 }
             });
         });

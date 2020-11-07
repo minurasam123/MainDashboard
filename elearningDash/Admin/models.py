@@ -44,6 +44,8 @@ class Student(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=254)
     password = models.CharField(max_length=255)
+    membership_type = (("Full Time", "Full Time"), ("Part Time", "Part Time"))
+    membership = models.CharField(choices=membership_type, max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     objects = models.Manager()
