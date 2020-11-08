@@ -35,7 +35,7 @@
 						<td>{{i.level}}</td>
 						<td>{{i.course_id}}</td>
 						<td>{{i.name}}</td>
-						<td><a href="">Delete</a></td>
+						<td><a href="{% url 'course_delete' %}">Delete</a></td>
 					</tr>
 				{% endfor %}
 			</table>

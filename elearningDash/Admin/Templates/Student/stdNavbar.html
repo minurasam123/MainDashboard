@@ -8,7 +8,7 @@
           <a><span class="fa fa-user mr-3"></span> Hello, {{request.user}} </a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-download mr-3"></span> My Courses </a>
+          <a href="{% url "dashboard" %}"><span class="fa fa-download mr-3"></span> My Courses </a>
         </li>
         <li>
           <a href="#"><span class="fa fa-list-alt mr-3"></span> Case Studies </a>
@@ -17,7 +17,7 @@
           <a href="#"><span class="fa fa-leanpub mr-3"></span> Results </a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-user-circle mr-3"></span> Profile </a>
+          <a href="{% url "student" %}"><span class="fa fa-user-circle mr-3"></span> Profile </a>
         </li>
         <li>
           <a href="{% url "logout" %}"><span class="fa fa-sign-out mr-3"></span> logout </a>

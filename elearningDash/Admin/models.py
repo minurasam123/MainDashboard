@@ -16,6 +16,8 @@ class Lecturer(models.Model):
     updated_at = models.DateTimeField(auto_now_add=True)
     objects = models.Manager()
 
+    students = models.ManyToManyField(User, related_name='courses_joined', blank=True)
+
     def __str__(self):
         return self.name
 
@@ -43,7 +45,6 @@ class Student(models.Model):
     Cima_ID = models.CharField(max_length=50)
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=254)
-    password = models.CharField(max_length=255)
     membership_type = (("Full Time", "Full Time"), ("Part Time", "Part Time"))
     membership = models.CharField(choices=membership_type, max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)

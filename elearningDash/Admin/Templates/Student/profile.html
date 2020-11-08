@@ -14,11 +14,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         
     </head>
-         <body>
-    <div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">
-      {% include 'Student/stdNavbar.html' %}
+      <body>
+     {% include 'Student/stdNavbar.html' %}
       
-            <div class="container-fluid">
+      <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
                <div class="card">
@@ -50,7 +49,7 @@
                         <div class="col-md-6">
                            <label>Full Name</label>
                            <div class="form-group">
-                              <input type="text" class="form-control" id="Textbox1" placeholder="Samaranayake M.D">
+                              <input type="text" class="form-control" id="Textbox1" placeholder="Enter Name">
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -94,25 +93,25 @@
                         <div class="col-md-4">
                            <label>User ID</label>
                            <div class="form-group">
-                              <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User ID" ReadOnly="True"></asp:TextBox>
+                              <input class="form-control" placeholder="Enter Username">
                            </div>
                         </div>
                         <div class="col-md-4">
                            <label>Old Password</label>
                            <div class="form-group">
-                              <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Email ID" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                              <input class="form-control" placeholder="Enter Current Password">
                            </div>
                         </div>
                         <div class="col-md-4">
                            <label>New Password</label>
                            <div class="form-group">
-                              <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Email ID" TextMode="Password"></asp:TextBox>
+                              <input class="form-control" placeholder="Enter New Password" >
                            </div>
                         </div>
                      </div>
            
          
-            <div class="col-md-7">
+            <div class="col">
                <div class="card">
                   <div class="card-body">
                      
@@ -132,8 +131,13 @@
                  <a class="btn btn-primary" href="#" role="button">Enroll to new courses</a>
                             
                   </div>
+                  
                </div>
             </div>
+            
+         </div>
+         <div class="col-md-7">
+            <a class="btn btn-primary" href="#" role="button"><input type="submit" value="Submit"></a>
          </div>
       </div>
 
@@ -142,6 +146,5 @@
              </div>
                 </div>
                   </div>
-             </div>
               </body>
 </html>
