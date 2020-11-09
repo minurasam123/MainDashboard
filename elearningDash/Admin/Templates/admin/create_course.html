@@ -1,0 +1,16 @@
+{% extends 'admin/main.html' %}
+
+{% block content %}
+
+<div id="create-lecture-form" class="p-4 p-md-5 pt-5">
+    <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+
+        <input type="submit" name="Submit">
+
+    </form>
+
+</div>
+
+{% endblock content %}

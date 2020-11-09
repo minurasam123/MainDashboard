@@ -7,9 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.models import Group
 from django.views.generic.list import ListView
-from .models import Course
-from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .forms import CourseCreationForm
 
 
 # ---------------------Authentication views-------------------------------
@@ -112,8 +110,22 @@ def all_student_info(request):
 def view_courses(request):
     user = request.user
     courses = Course.objects.filter(lecturer=user.lecturer)
+    context = {'courses': courses}
+    return render(request, 'admin/view_courses.html', context)
 
-    return render(request, 'admin/view_courses.html', {'courses': courses})
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['Lecturer'])
+def create_course(request):
+    form = CourseCreationForm()
+    if request.method == 'POST':
+        form = CourseCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('v_courses')
+
+    context = {'form': form}
+    return render(request, 'admin/create_course.html', context)
 
 
 @login_required(login_url='login')
@@ -164,19 +176,12 @@ def load_course(request):
     return render(request, 'admin/course_dropdown.html', d)
 
 
-class OwnerMixin(object):
-    def get_queryset(self):
-        qs = super(OwnerMixin, self).get_queryset()
-        return qs.filter(owner=self.request.user)
-
-
-class OwnerCourseMixin(OwnerMixin):
-    model = Course
-
-
-class CourseDeleteView(OwnerCourseMixin, DeleteView):
-    template_name = 'admin/course_delete.html'
-    success_url = reverse_lazy('v_courses')
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['Lecturer'])
+# def delete_course(request):
+#     course_id = request.GET.get('course_id')
+#     Course.objects.filter(course_id=course_id).delete()
+#     return redirect('v_courses')
 
 
 @login_required(login_url='login')
