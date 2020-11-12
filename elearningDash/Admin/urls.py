@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url
 from . import views
 
 
@@ -17,6 +18,9 @@ urlpatterns = [
     path('accounts/prof/', views.admin, name='admin'),
     path('accounts/prof/courses', views.view_courses, name='v_courses'),
     path('account/prof/create-couses', views.create_course, name='c_course'),
+    path('account/prof/up-couses/<str:pk>/', views.update_course, name='up_course'),
+    path('account/prof/del-couses/<str:pk>/', views.delete_course, name='del_course'),
+    path('account/prof/crsmod-update-couses/<str:pk>/', views.CourseModuleUpdateView.as_view(), name='crsmod_update'),
     path('accounts/prof/content', views.content, name='lecnotesvids'),
     path('accounts/prof/editstudent', views.student_edit, name='edit_stud'),
     path('accounts/prof/es/cs', views.load_course, name='courses_dropdown'),

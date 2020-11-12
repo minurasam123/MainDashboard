@@ -84,7 +84,6 @@ class Content(models.Model):
         ContentType,
         limit_choices_to={
             'model__in': (
-                            'text',
                             'video',
                             'image',
                             'file'

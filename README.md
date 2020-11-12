@@ -13,8 +13,9 @@ This will be an online website hosted by Google Cloud Hosting
 
 Install the requirements:
 
-```bash
-pip install -r requirements.txt
+```bashRun 
+pip install -r requirements.txt (Python 2), or pip3 install -r requirements.txt (Python 3)
+pip freeze > requirements.txt
 ```
 
 Create the database:

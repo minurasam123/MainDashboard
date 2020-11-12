@@ -80,11 +80,12 @@ WSGI_APPLICATION = 'elearningDash.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ElearningDashboard',
         'USER': 'postgres',
         'PASSWORD': '1234',
         "HOST": "localhost",
+        "PORT": '',
     }
 }
 # db_from_env = dj_database_url.config(conn_max_age=600)
