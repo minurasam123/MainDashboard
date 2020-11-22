@@ -8,6 +8,7 @@ from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.models import Group
 from django.views.generic.list import ListView
 from .forms import CourseCreationForm
+from django.views.generic import View, TemplateView
 from django.forms.models import modelform_factory
 from django.apps import apps
 from django.views.generic.base import TemplateResponseMixin, View
@@ -108,31 +109,11 @@ def admin(request):
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['Lecturer'])
-def all_student_info(request):
-    return render(request, 'admin/All Student information.html')
-
-
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['Lecturer'])
 def view_courses(request):
     user = request.user
     courses = Course.objects.filter(lecturer=user.lecturer)
     context = {'courses': courses}
     return render(request, 'admin/view_courses.html', context)
-
-
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['Lecturer'])
-def create_course(request):
-    form = CourseCreationForm()
-    if request.method == 'POST':
-        form = CourseCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('v_courses')
-
-    context = {'form': form}
-    return render(request, 'admin/create_course.html', context)
 
 
 @login_required(login_url='login')
@@ -211,6 +192,20 @@ def student_details(request):
 def student_edit(request):
     levels = Level.objects.all()
     return render(request, 'admin/StuEdit.html', {'levels': levels})
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['Lecturer'])
+def create_course(request):
+    form = CourseCreationForm()
+    if request.method == 'POST':
+        form = CourseCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('v_courses')
+
+    context = {'form': form}
+    return render(request, 'admin/create_course.html', context)
 
 
 @login_required(login_url='login')
@@ -314,8 +309,8 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
         return None
 
     def get_form(self, model, *args, **kwargs):
-        Form = modelform_factory(model, exclude=['owner', 'order', 'created', 'updated'])
-        return Form(*args, **kwargs)
+        form = modelform_factory(model, exclude=['owner', 'order', 'created', 'updated'])
+        return form(*args, **kwargs)
 
     def dispatch(self, request, module_id, model_name, id=None):
         user = request.user

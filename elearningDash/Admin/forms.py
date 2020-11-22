@@ -17,4 +17,8 @@ class CourseCreationForm(ModelForm):
         model = Course
         fields = '__all__'
 
-ModuleFormSet = inlineformset_factory(Course, Module, fields=['module_name', 'overview'], extra=2, can_delete=True)
+ModuleFormSet = inlineformset_factory(Course, Module, 
+                                      fields=['module_name', 
+                                              'overview'], 
+                                      extra=2, 
+                                      can_delete=True)
