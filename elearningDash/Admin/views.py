@@ -319,7 +319,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
         self.module = get_object_or_404(Module, id=m_id, course=courses)
         self.model = self.get_model(model_name)
         if id:
-            self.obj = get_object_or_404(self.model, id=id, owner=request.user.lecturer)
+            self.obj = get_object_or_404(self.model, id=id, lec=request.user.lecturer)
         return super(ContentCreateUpdateView, self).dispatch(request, m_id, model_name, id)
 
     def get(self, request, module_id, model_name, id=None):
