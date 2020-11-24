@@ -264,7 +264,7 @@ class ManageCourseListView(ListView):
 
     def get_queryset(self):
         qs = super(ManageCourseListView, self).get_queryset()
-        return qs.filter(owner=self.request.user)
+        return qs.filter(owner=self.request.user.lecturer)
 
 
 class CourseModuleUpdateView(TemplateResponseMixin, View):
@@ -305,20 +305,21 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
 
     def get_model(self, model_name):
         if model_name in ['video', 'image', 'file']:
-            return apps.get_model(app_label='courses', model_name=model_name)
+            return apps.get_model(app_label='Admin', model_name=model_name)
         return None
 
     def get_form(self, model, *args, **kwargs):
-        form = modelform_factory(model, exclude=['owner', 'order', 'created', 'updated'])
+        form = modelform_factory(model, exclude=['owner', 'order', 'created', 'updated', 'lecturer'])
         return form(*args, **kwargs)
 
     def dispatch(self, request, module_id, model_name, id=None):
-        user = request.user
         m_id = module_id
-        self.module = get_object_or_404(Module, id=m_id, course__owner=user)
+        crs_id = Module.objects.get(id=m_id)
+        courses = Course.objects.get(id=crs_id.course_id)        
+        self.module = get_object_or_404(Module, id=m_id, course=courses)
         self.model = self.get_model(model_name)
         if id:
-            self.obj = get_object_or_404(self.model, id=id, owner=request.user)
+            self.obj = get_object_or_404(self.model, id=id, owner=request.user.lecturer)
         return super(ContentCreateUpdateView, self).dispatch(request, m_id, model_name, id)
 
     def get(self, request, module_id, model_name, id=None):
@@ -333,7 +334,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
                              files=request.FILES)
         if form.is_valid():
             obj = form.save(commit=False)
-            obj.owner = request.user
+            obj.owner = request.user.lecturer
             obj.save()
             if not id:
                 # new content
@@ -343,3 +344,32 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
 
         return self.render_to_response({'form': form,
                                         'object': self.obj})
+
+
+class ContentDeleteView(View):
+    def post(self, request, id):
+        contents = Content.objects.get(id=id)
+        modules = Module.objects.get(id=contents.module_id)
+        content = get_object_or_404(Content,
+                               id=id,
+                               module=modules)
+        module = content.module
+        content.item.delete()
+        content.delete()
+        return redirect('module_content_list', module.id)
+
+
+class ModuleContentListView(TemplateResponseMixin, View):
+    template_name = 'admin/manage/content_list.html'
+
+    def get(self, request, module_id):
+        m_id = module_id
+        crs_id = Module.objects.get(id=m_id)
+        courses = Course.objects.get(id=crs_id.course_id)
+        crs = Module.objects.filter(course_id=crs_id.course_id)
+        module = get_object_or_404(Module,
+                                   id=m_id,
+                                   course=courses)
+
+        return self.render_to_response({'module': module,
+                                        'crs': crs})

@@ -20,7 +20,15 @@ urlpatterns = [
     path('account/prof/create-couses', views.create_course, name='c_course'),
     path('account/prof/up-couses/<str:pk>/', views.update_course, name='up_course'),
     path('account/prof/del-couses/<str:pk>/', views.delete_course, name='del_course'),
+
+
     path('account/prof/crsmod-update-couses/<str:pk>/', views.CourseModuleUpdateView.as_view(), name='crsmod_update'),
+    url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/create/$', views.ContentCreateUpdateView.as_view(), name='module_content_create'),
+    url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/(?P<id>\d+)/$', views.ContentCreateUpdateView.as_view(), name='module_content_update'),
+    url(r'^account/prof/module/content/(?P<id>\d+)/delete/$', views.ContentDeleteView.as_view(), name='module_content_delete'),
+    url(r'^account/prof/module/(?P<module_id>\d+)/$', views.ModuleContentListView.as_view(), name='module_content_list'),
+    
+
     path('accounts/prof/content', views.content, name='lecnotesvids'),
     path('accounts/prof/editstudent', views.student_edit, name='edit_stud'),
     path('accounts/prof/es/cs', views.load_course, name='courses_dropdown'),
