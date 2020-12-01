@@ -7,12 +7,14 @@ from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.models import Group
 from django.views.generic.list import ListView
-from .forms import CourseCreationForm
+from .forms import CourseCreationForm, ProfileCreationForm, ProfileCreationForm2
 from django.views.generic import View, TemplateView
 from django.forms.models import modelform_factory
 from django.apps import apps
 from django.views.generic.base import TemplateResponseMixin, View
 from .forms import ModuleFormSet
+from django.contrib.auth.models import User
+from django.http.response import HttpResponseRedirect
 
 
 # ---------------------Authentication views-------------------------------
@@ -54,13 +56,13 @@ def register(request):
             user = form.save()
             username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
-            cima_id = form.cleaned_data.get('Cima_ID')
 
             group = Group.objects.get(name='Student')
+
             user.groups.add(group)
+
             Student.objects.create(
                 user=user,
-                Cima_ID = cima_id,
                 name=username,
                 email=email
             )
@@ -228,6 +230,33 @@ def stud_data(request):
     return render(request, 'admin/studentdata.html', d)
 
 
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['Lecturer'])
+def course_modules_1(request):
+    user = request.user
+    courses = Course.objects.filter(lecturer=user.lecturer)
+    level1 = courses.filter(level=7)
+    level2 = courses.filter(level=2)
+    level3 = courses.filter(level=5)
+    level4 = courses.filter(level=6)
+    context = {'course': courses,
+               'level1': level1,
+               'level2': level2,
+               'level3': level3,
+               'level4': level4}
+    return render(request, 'admin/view_modules.html', context)
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['Lecturer'])
+def course_modules_2(request, course_id):
+    modules = Module.objects.filter(course_id=course_id)
+    courses = Course.objects.get(id=course_id)
+    context = {'modules': modules,
+               'course': courses}
+    return render(request, 'admin/view_modules_2.html', context)
+
+
 # -----------------------Student views---------------------
 
 
@@ -246,7 +275,37 @@ def std_lectures(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['Student'])
 def student(request):
-    return render(request, 'Student/profile.html')
+    # obj = get_object_or_404(Student, user=request.user)
+    form = ProfileCreationForm()
+    form1 = ProfileCreationForm2()
+    if request.user.first_name != False:
+        if request.method == "POST":
+            form = ProfileCreationForm2(data=request.POST, instance=request.user)
+            form2 = ProfileCreationForm(data=request.POST or None, instance=request.user.student)
+            if form.is_valid() and form2.is_valid():
+                form.save()
+                form2.save()
+                update = form.save(commit=False)
+                update.user = request.user
+                update.save()
+                return redirect('profilepage')
+
+        else:
+            user = request.user
+            student = Student.objects.get(user=user)
+            context = {'student': student,
+                    'form': form,
+                    'form1': form1
+                    }
+            return render(request, 'Student/profile.html', context)
+    else:
+        return redirect('profilepage')
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['Student'])
+def student_profile(request):
+    return render(request, 'Student/profilepage.html')
 
 
 @login_required(login_url='login')
@@ -254,6 +313,25 @@ def student(request):
 def stud_dash(request):
     return render(request, 'Student/student_dashboard.html')
 
+
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['Student'])
+# def update_profile(request, pk):
+#     form1 = ProfileCreationForm()
+#     form2 = ProfileCreationForm2()
+#     student = Student.objects.get(id=pk)
+
+#     if request.method == 'POST':
+#         form = ProfileCreationForm(request.POST, instance=student)
+#         if form.is_valid():
+#             form.save()
+#             dob = form.cleaned_data('dob')
+
+#             return redirect('v_courses')
+
+#     context = {'form': form}
+#     return render(request, 'admin/create_course.html', context)
 
 # ------------------Content Management--------------------------
 
@@ -365,11 +443,11 @@ class ModuleContentListView(TemplateResponseMixin, View):
     def get(self, request, module_id):
         m_id = module_id
         crs_id = Module.objects.get(id=m_id)
-        courses = Course.objects.get(id=crs_id.course_id)
         crs = Module.objects.filter(course_id=crs_id.course_id)
         module = get_object_or_404(Module,
-                                   id=m_id,
-                                   course=courses)
+                                   id=m_id)
 
         return self.render_to_response({'module': module,
                                         'crs': crs})
+
+

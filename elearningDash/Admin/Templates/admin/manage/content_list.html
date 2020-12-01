@@ -42,6 +42,7 @@
     padding: 10px 30px 10px 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
+    width: 100%;
   }
 
   #modules {
@@ -86,13 +87,12 @@
             <li>No modules yet.</li>
           {% endfor %}
         </ul>
-        <p class="edit"><a href="{% url "crsmod_update" course.id %}">Edit modules</a></p>
         {% if course.modules.count > 0 %}
           <a href="{% url "module_content_list" course.modules.first.id %}">Manage contents</a>
         {% endif %}
       </div>
     </div>
-    <div class="col-md">
+    <div class="col-sm>
       <div class="module">
         <h2>{{ module.module_name }}</h2>
         <h4>Module contents:</h4>
@@ -100,6 +100,7 @@
           {% for content in module.contents.all %}
             <div data-id="{{ content.id }}">
               {% with item=content.item %}
+            
               <div class="module-contents">
                 <p>{{ item }} (
                 {{ item|model_name }})</p>

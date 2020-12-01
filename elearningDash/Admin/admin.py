@@ -14,7 +14,7 @@ class LevelAdmin(admin.ModelAdmin):
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ['Cima_ID', 'name', 'email', 'level', 'lecturer']
+    list_display = ['id', 'Cima_ID', 'name', 'email', 'level', 'lecturer', 'membership', 'lecturer']
     list_filter = ['level', 'lecturer', 'name']
     search_fields = ['Cima_ID', 'name']
 

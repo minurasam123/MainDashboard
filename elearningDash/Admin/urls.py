@@ -20,7 +20,8 @@ urlpatterns = [
     path('account/prof/create-couses', views.create_course, name='c_course'),
     path('account/prof/up-couses/<str:pk>/', views.update_course, name='up_course'),
     path('account/prof/del-couses/<str:pk>/', views.delete_course, name='del_course'),
-
+    path('accounts/prof/courses/content/', views.course_modules_1, name='view_content'),
+    url(r'^accounts/prof/courses/content/(?P<course_id>\d+)/$', views.course_modules_2, name='course_mods'),
 
     path('account/prof/crsmod-update-couses/<str:pk>/', views.CourseModuleUpdateView.as_view(), name='crsmod_update'),
     url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/create/$', views.ContentCreateUpdateView.as_view(), name='module_content_create'),
@@ -38,4 +39,5 @@ urlpatterns = [
     # ----------------------------------------------------------------------------
     path('accounts/stud_prof/', views.student, name='student'),
     path('accounts/stud_prof/dashboard', views.stud_dash, name='dashboard'),
+    path('accounts/stud_prof/student', views.student_profile, name='profilepage')
 ]
