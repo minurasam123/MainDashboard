@@ -275,13 +275,14 @@ def std_lectures(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['Student'])
 def student(request):
-    # obj = get_object_or_404(Student, user=request.user)
+    obj = get_object_or_404(Student, user=request.user)
+    std = Student.objects.get(user=request.user)
     form = ProfileCreationForm()
     form1 = ProfileCreationForm2()
-    if request.user.first_name != False:
+    if std.lecturer is None:
         if request.method == "POST":
             form = ProfileCreationForm2(data=request.POST, instance=request.user)
-            form2 = ProfileCreationForm(data=request.POST or None, instance=request.user.student)
+            form2 = ProfileCreationForm(data=request.POST or None, instance=obj)
             if form.is_valid() and form2.is_valid():
                 form.save()
                 form2.save()
@@ -290,14 +291,13 @@ def student(request):
                 update.save()
                 return redirect('profilepage')
 
-        else:
-            user = request.user
-            student = Student.objects.get(user=user)
-            context = {'student': student,
+        user = request.user
+        student = Student.objects.get(user=user)
+        context = {'student': student,
                     'form': form,
                     'form1': form1
                     }
-            return render(request, 'Student/profile.html', context)
+        return render(request, 'Student/profile.html', context)
     else:
         return redirect('profilepage')
 
