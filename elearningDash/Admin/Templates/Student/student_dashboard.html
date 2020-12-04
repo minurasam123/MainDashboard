@@ -19,65 +19,17 @@
       {% include 'Student/stdNavbar.html' %}
          <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-        <h2>CIMA Certificate Level</h2>
-          <div class="course">
-            <div class="box">
-              <div class="smallbox">
-                <h1>BA1</h1>
-              </div><!-- smallbox -->
-              <div class="links">
-                <ul>
-                  <li><a href="student_my_lectures.html">Lectures</a></li>
-                  <li><a href="#">Practice quiz</a></li>
-                </ul>
-              </div><!-- links -->
-              <div class="coursedetails">
-                <p>Fundamentals of Business Economics</p>
-              </div><!-- coursedetails -->
-            </div><!-- box -->
-            <div class="box">
-              <div class="smallbox">
-                <h1>BA2</h1>
-              </div><!-- smallbox -->
-              <div class="links">
-                <ul>
-                  <li><a href="student_my_lectures.html">Lectures</a></li>
-                  <li><a href="#">Practice quiz</a></li>
-                </ul>
-              </div><!-- links -->
-              <div class="coursedetails">
-                <p>Fundamental of Management Accounting</p>
-              </div><!-- coursedetails -->
-            </div><!-- box -->
-            <div class="box">
-              <div class="smallbox">
-                <h1>BA3</h1>
-              </div><!-- smallbox -->
-              <div class="links">
-                <ul>
-                  <li><a href="student_my_lectures.html">Lectures</a></li>
-                  <li><a href="#">Practice quiz</a></li>
-                </ul>
-              </div><!-- links -->
-              <div class="coursedetails">
-                <p>Fundamentals of Financial Accounting</p>
-              </div><!-- coursedetails -->
-            </div><!-- box -->    
-             <div class="box">
-              <div class="smallbox">
-                <h1>BA4</h1>
-              </div><!-- smallbox -->
-              <div class="links">
-                <ul>
-                  <li><a href="student_my_lectures.html">Lectures</a></li>
-                  <li><a href="#">Practice quiz</a></li>
-                </ul>
-              </div><!-- links -->
-              <div class="coursedetails">
-                <p>Fundamentals of ethics, corporate governance and business law</p>
-              </div><!-- coursedetails -->
-            </div><!-- box -->        
-          </div><!-- course -->
+        <h1>My courses</h1>
+
+        <div class="module">
+            {% for course in object_list %}
+                <div class="course-info">
+                    <h3>{{ course.name }}</h3>
+                    <p><a href="{% url "student_course_detail" course.id %}">Access contents</a></p>
+                </div>
+            {% endfor %}
+        </div>    
+          </div>
 		</div>
   </body>
 </html>

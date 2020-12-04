@@ -15,6 +15,8 @@ from django.views.generic.base import TemplateResponseMixin, View
 from .forms import ModuleFormSet
 from django.contrib.auth.models import User
 from django.http.response import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.detail import DetailView
 
 
 # ---------------------Authentication views-------------------------------
@@ -304,34 +306,51 @@ def student(request):
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['Student'])
-def student_profile(request):
-    return render(request, 'Student/profilepage.html')
+def students_profile(request):
+    user = request.user
+    student_det = Student.objects.get(user=request.user)
+    context = {'student': student_det,
+                 'user': user
+                 }
+    return render(request, 'Student/profilepage.html', context)
 
 
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['Student'])
-def stud_dash(request):
-    return render(request, 'Student/student_dashboard.html')
+class StudentCourseListView(LoginRequiredMixin, ListView):
+    model = Course
+    template_name = 'Student/student_dashboard.html'
+
+    def get_queryset(self):
+        student = Student.objects.get(user=self.request.user)
+        level = student.level
+        qs = super(StudentCourseListView, self).get_queryset()
+        return qs.filter(level=level)
 
 
+class StudentCourseDetailView(DetailView):
+    model = Course
+    template_name = 'Student/detail.html'
 
-# @login_required(login_url='login')
-# @allowed_users(allowed_roles=['Student'])
-# def update_profile(request, pk):
-#     form1 = ProfileCreationForm()
-#     form2 = ProfileCreationForm2()
-#     student = Student.objects.get(id=pk)
+    def get_queryset(self):
+        student = Student.objects.get(user=self.request.user)
+        level = student.level
+        qs = super(StudentCourseDetailView, self).get_queryset()
+        return qs.filter(level=level)
 
-#     if request.method == 'POST':
-#         form = ProfileCreationForm(request.POST, instance=student)
-#         if form.is_valid():
-#             form.save()
-#             dob = form.cleaned_data('dob')
+    def get_context_data(self, **kwargs):
+        context = super(StudentCourseDetailView,
+                        self).get_context_data(**kwargs)
+        # get course object
+        course = Course.objects.get(id=self.kwargs["pk"])
+        modules = Module.objects.filter(course=course)
+        if 'module_id' in self.kwargs:
+            # get current module
+            context['module'] = modules.get(
+                                    id=self.kwargs['module_id'])
+        else:
+            # get first module
+            context['module'] = modules.all()
+        return context
 
-#             return redirect('v_courses')
-
-#     context = {'form': form}
-#     return render(request, 'admin/create_course.html', context)
 
 # ------------------Content Management--------------------------
 

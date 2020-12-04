@@ -44,13 +44,19 @@
             <h3>PERSONAL DETAILS</h3>
             <div class="details">
                 <div class="item">
-                    <label for="fname">Name</label><span class="ans" id="fname">Samitha Perera</span>
+                    <label for="name">Name</label><span class="ans" id="fname">{{user.first_name}} {{user.last_name}}</span>
                 </div>
                 <div class="item">
-                    <label for="address">Address</label><span class="ans" id="address">A/50,Nawanagaraya,Anurdhapuraya</span>
+                    <label for="CIMA_ID">CIMA ID</label><span class="ans" id="cima_id">{{student.Cima_ID}}</span>
                 </div>
                 <div class="item">
-                    <label for="email">Email</label><span class="ans" id="email">samitha123@gmail.com</span>
+                    <label for="email">Email</label><span class="ans" id="email">{{user.email}}</span>
+                </div>
+                <div class="item">
+                    <label for="dob">Date of Birth</label><span class="ans" id="dob">{{student.dob}}</span>
+                </div>
+                <div class="item">
+                    <label for="numbre">Contact No</label><span class="ans" id="contact">{{student.contact_no}}</span>
                 </div>
             </div>
             <button type="button" class="btn btn-lg btn-primary editbtn">Edit Details</button>
@@ -87,13 +93,13 @@
             <h3>Academic Details</h3>
             <div class="details">
                 <div class="item">
-                    <label for="cid">CIMA Id</label><span class="ans" id="cid">CIMA12345</span>
+                    <label for="membership">Membership</label><span class="ans" id="membership">{{student.membership}}</span>
                 </div>
                 <div class="item">
-                    <label for="membership">Membership</label><span class="ans" id="membership">Platinum</span>
+                    <label for="level">Level</label><span class="ans" id="level">{{student.level}}</span>
                 </div>
                 <div class="item">
-                    <label for="level">Level</label><span class="ans" id="level">Level 3</span>
+                    <label for="cid">Lecturer</label><span class="ans" id="lecturer">{{student.lecturer}}</span>
                 </div>
             </div>
         </div>

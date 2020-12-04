@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Student Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- style sheets -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/Student/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Student/student_dashboard.css' %}">
+  	<link rel="stylesheet" type="text/css" href="{% static '/css/Student/lectures.css' %}"> 
+  </head>
+
+  <body>
+		
+    <div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">
+      {% include 'Student/stdNavbar.html' %}
+         <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <h1>
+                {{ module.name }}
+            </h1>
+            <div class="contents">
+                <h3>Modules</h3>
+                <ul id="modules">
+                {% for m in modules %}
+                    <li data-id="{{ m.id }}" {% if m == module %}class="selected"{% endif %}>
+                        <a href="{% url "student_course_detail_module" object.id m.id %}">
+                            <span>
+                                Module <span class="order">{{ m.order|add:1 }}</span>
+                            </span>
+                            <br>
+                            {{ m.title }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li>No modules yet.</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="module">
+                {% for content in module.contents.all %}
+                    {% with item=content.item %}
+                        <h2>{{ item.title }}</h2>
+                        {{ item.render }}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

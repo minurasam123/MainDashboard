@@ -23,13 +23,26 @@ urlpatterns = [
     path('accounts/prof/courses/content/', views.course_modules_1, name='view_content'),
     url(r'^accounts/prof/courses/content/(?P<course_id>\d+)/$', views.course_modules_2, name='course_mods'),
 
-    path('account/prof/crsmod-update-couses/<str:pk>/', views.CourseModuleUpdateView.as_view(), name='crsmod_update'),
-    url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/create/$', views.ContentCreateUpdateView.as_view(), name='module_content_create'),
-    url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/(?P<id>\d+)/$', views.ContentCreateUpdateView.as_view(), name='module_content_update'),
-    url(r'^account/prof/module/content/(?P<id>\d+)/delete/$', views.ContentDeleteView.as_view(), name='module_content_delete'),
-    url(r'^account/prof/module/(?P<module_id>\d+)/$', views.ModuleContentListView.as_view(), name='module_content_list'),
-    
+    path('account/prof/crsmod-update-couses/<str:pk>/', 
+    views.CourseModuleUpdateView.as_view(), 
+    name='crsmod_update'),
 
+    url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/create/$', 
+    views.ContentCreateUpdateView.as_view(), 
+    name='module_content_create'),
+
+    url(r'^account/prof/module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/(?P<id>\d+)/$', 
+    views.ContentCreateUpdateView.as_view(), 
+    name='module_content_update'),
+
+    url(r'^account/prof/module/content/(?P<id>\d+)/delete/$', 
+    views.ContentDeleteView.as_view(), 
+    name='module_content_delete'),
+
+    url(r'^account/prof/module/(?P<module_id>\d+)/$', 
+    views.ModuleContentListView.as_view(), 
+    name='module_content_list'),
+ 
     path('accounts/prof/content', views.content, name='lecnotesvids'),
     path('accounts/prof/editstudent', views.student_edit, name='edit_stud'),
     path('accounts/prof/es/cs', views.load_course, name='courses_dropdown'),
@@ -38,6 +51,17 @@ urlpatterns = [
     path('accounts/prof/students', views.student_profile, name='v_students'),
     # ----------------------------------------------------------------------------
     path('accounts/stud_prof/', views.student, name='student'),
-    path('accounts/stud_prof/dashboard', views.stud_dash, name='dashboard'),
-    path('accounts/stud_prof/student', views.student_profile, name='profilepage')
+    path('accounts/stud_prof/student', views.students_profile, name='profilepage'),
+    
+    url(r'^accounts/stud_prof/dashboard/$',
+    views.StudentCourseListView.as_view(),
+    name='student_course_list'),
+
+    url(r'^course/(?P<pk>\d+)/$',
+    views.StudentCourseDetailView.as_view(),
+    name='student_course_detail'),
+
+    url(r'^course/(?P<pk>\d+)/(?P<module_id>\d+)/$',
+    views.StudentCourseDetailView.as_view(),
+    name='student_course_detail_module')
 ]
