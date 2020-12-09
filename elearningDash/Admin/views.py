@@ -341,15 +341,17 @@ class StudentCourseDetailView(DetailView):
                         self).get_context_data(**kwargs)
         # get course object
         course = Course.objects.get(id=self.kwargs["pk"])
-        modules = Module.objects.filter(course=course)
+        modules = Module.objects.filter(course=course.id)
         if 'module_id' in self.kwargs:
             # get current module
-            context['module'] = modules.get(
+            context['modules'] = Module.objects.get(
                                     id=self.kwargs['module_id'])
         else:
             # get first module
-            context['module'] = modules.all()
+            context['module'] = modules
         return context
+
+
 
 
 # ------------------Content Management--------------------------

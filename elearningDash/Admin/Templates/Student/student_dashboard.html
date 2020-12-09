@@ -10,26 +10,33 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static '/css/Student/style.css' %}">
     <link rel="stylesheet" href="{% static '/css/Student/student_dashboard.css' %}">
-  	<link rel="stylesheet" type="text/css" href="{% static '/css/Student/lectures.css' %}"> 
+  	<link rel="stylesheet" href="{% static '/css/Student/lectures.css' %}"> 
   </head>
 
   <body>
-		
-    <div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">
-      {% include 'Student/stdNavbar.html' %}
+		  {% include 'Student/stdNavbar.html' %}
          <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h1>My courses</h1>
 
-        <div class="module">
+          <div class="course">
             {% for course in object_list %}
-                <div class="course-info">
-                    <h3>{{ course.name }}</h3>
-                    <p><a href="{% url "student_course_detail" course.id %}">Access contents</a></p>
-                </div>
+                  <div class="box1" style="position: relative;
+                  text-align: center;
+                  background: darkslategray;
+                  float: left;
+                  padding: 10px 10px 10px 10px;
+                  box-sizing: border-box;
+                  border-radius: 
+                  10px; width: 200px;">
+                    <h5 style="color: white;">{{ course.name }}</h5>
+                    <br>
+                    <h6><a href="{% url "student_course_detail" course.id %}">Access contents</a></h6>
+                  </div>
             {% endfor %}
-        </div>    
+            
+            </div>
           </div>
-		</div>
+
   </body>
 </html>

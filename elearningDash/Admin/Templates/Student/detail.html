@@ -14,44 +14,46 @@
   </head>
 
   <body>
-		
-    <div class="wrapper d-flex align-items-stretch" style="background-size: 100%; background-image: url('https://storage.needpix.com/rsynced_images/green-sidelight-background.jpg');">
-      {% include 'Student/stdNavbar.html' %}
+	 {% include 'Student/stdNavbar.html' %}
          <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <h1>
-                {{ module.name }}
+                {{ course.name }}
             </h1>
             <div class="contents">
+                
                 <h3>Modules</h3>
-                <ul id="modules">
-                {% for m in modules %}
+                <div class="box1" style="position: relative;text-align: center;
+                background: darkslategray;
+                float: left;
+                padding: 10px 10px 10px 10px;
+                box-sizing: border-box;
+                border-radius: 
+                10px; width: 200px;">
+                <ul id="module">
+                {% for m in module %}
                     <li data-id="{{ m.id }}" {% if m == module %}class="selected"{% endif %}>
                         <a href="{% url "student_course_detail_module" object.id m.id %}">
                             <span>
-                                Module <span class="order">{{ m.order|add:1 }}</span>
+                                Module <span class="order">{{ m.order|add:1 }} : </span>
                             </span>
-                            <br>
-                            {{ m.title }}
+                            {{ m.module_name }}
                         </a>
                     </li>
                 {% empty %}
                     <li>No modules yet.</li>
                 {% endfor %}
-                </ul>
+                </ul>          
             </div>
-            <div class="module">
-                {% for content in module.contents.all %}
+            </div>
+            <div class="modules">
+                {% for content in modules.contents.all %}
                     {% with item=content.item %}
                         <h2>{{ item.title }}</h2>
                         {{ item.render }}
                     {% endwith %}
                 {% endfor %}
             </div>
-
-
-
         </div>
-    </div>
 </body>
 </html>
