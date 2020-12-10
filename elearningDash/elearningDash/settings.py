@@ -26,7 +26,7 @@ SECRET_KEY = 'zou^!o6y0+3!6lau5)pubt3!4o+(6e&8zl)_$nu1asb2dh1gzs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.56.1', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.56.1', '127.0.0.1', 'lms-cima.herokuapp.com']
 
 
 # Application definition
@@ -139,3 +139,12 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
+
+# #SMTP Configuration
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = "minura.samaranayake@gmail.com"
+# EMAIL_HOST_PASSWORD = "Kandy1219"

@@ -1,6 +1,8 @@
 from django.urls import path
+from django.contrib import admin
 from django.conf.urls import url
 from . import views
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -63,5 +65,10 @@ urlpatterns = [
 
     url(r'^course/(?P<pk>\d+)/(?P<module_id>\d+)/$',
     views.StudentCourseDetailView.as_view(),
-    name='student_course_detail_module')
+    name='student_course_detail_module'),
+
+    # path('reset_password/', auth_views.PasswordResetView.as_view(), name="reset_password"),
+    # path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    # path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+    # path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
 ]

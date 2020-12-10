@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('Admin.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin_panel'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,
