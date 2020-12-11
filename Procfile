@@ -1,1 +1,0 @@
-web: gunicorn elearningDash.elearningDash.wsgi --log-file -
