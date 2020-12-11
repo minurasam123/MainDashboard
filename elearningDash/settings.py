@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'elearningDash.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ElearningDashboard',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        "HOST": "localhost",
-        "PORT": '',
+        'NAME': 'LMSdashboard',
+        'USER': 'minuraSama',
+        'PASSWORD': 'Kandy1219',
+        "HOST": "database-1.curxepzb7bfj.us-east-2.rds.amazonaws.com",
+        "PORT": '5432',
     }
 }
 import dj_database_url
