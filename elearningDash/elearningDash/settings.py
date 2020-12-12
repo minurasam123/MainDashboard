@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'elearningDash.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'LMSdashboard',
-        'USER': 'minuraSama',
-        'PASSWORD': 'Kandy1219',
-        "HOST": "database-1.curxepzb7bfj.us-east-2.rds.amazonaws.com",
+        'NAME': 'ElearningDashboard',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        "HOST": "",
         "PORT": '5432',
     }
 }
@@ -152,12 +152,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 # EMAIL_HOST_PASSWORD = "Kandy1219"
 
 
-#S3 BUCKET CONFIG
-
-AWS_ACCESS_KEY_ID = 'AKIA3TZTXJJPGR2SXK6H'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'minura-lms-bucket'
-
-AWS_S3_FILE_OVERWRITE = False 
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
