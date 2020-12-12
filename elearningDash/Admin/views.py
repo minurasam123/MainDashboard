@@ -164,10 +164,10 @@ def drop_lectures(request):
 def lecture_notes(request):
     user = request.user
     courses = Course.objects.filter(lecturer=user.lecturer)
-    level1 = courses.filter(level=7)
+    level1 = courses.filter(level=1)
     level2 = courses.filter(level=2)
-    level3 = courses.filter(level=5)
-    level4 = courses.filter(level=6)
+    level3 = courses.filter(level=3)
+    level4 = courses.filter(level=4)
     context = {'course': courses,
                'level1': level1,
                'level2': level2,
@@ -237,10 +237,10 @@ def stud_data(request):
 def course_modules_1(request):
     user = request.user
     courses = Course.objects.filter(lecturer=user.lecturer)
-    level1 = courses.filter(level=7)
+    level1 = courses.filter(level=1)
     level2 = courses.filter(level=2)
-    level3 = courses.filter(level=5)
-    level4 = courses.filter(level=6)
+    level3 = courses.filter(level=3)
+    level4 = courses.filter(level=4)
     context = {'course': courses,
                'level1': level1,
                'level2': level2,
