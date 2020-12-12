@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'embed_video',
-    'storages',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -83,10 +82,10 @@ WSGI_APPLICATION = 'elearningDash.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ElearningDashboard',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        "HOST": "",
+        'NAME': 'LMSdashboard',
+        'USER': 'minuraSama',
+        'PASSWORD': 'Kandy1219',
+        "HOST": "database-1.curxepzb7bfj.us-east-2.rds.amazonaws.com",
         "PORT": '5432',
     }
 }
@@ -150,5 +149,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = "minura.samaranayake@gmail.com"
 # EMAIL_HOST_PASSWORD = "Kandy1219"
-
-
